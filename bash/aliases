@@ -1,0 +1,50 @@
+# some more ls aliases
+alias ll='ls -alFh'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+#Git aliases
+alias gst='git status'
+alias gl='git pull'
+alias gp='git push'
+alias gd='git diff | nano'
+alias gcv='git commit -v'
+alias gca='git commit -v -a'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gpom='git push origin master'
+alias grao='git remote add origin'
+
+#Emacs
+alias em='emacs -nw'
+
+#Sublime Editor
+alias sb='sublime'
+
+#matlab
+alias ml='sudo matlab -nosoftwareopengl'
+
+#start samba
+alias smb='sudo service smbd start && sudo service nmbd start'
+
+#clear Screen
+alias c='clear'
+
+#Moving up directories
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+#Redo last command
+alias !!!='sudo !!'
+
+#Install and remove
+alias inst='sudo apt-get install'
+alias remo='sudo apt-get remove'
+
+#Bitwig Studio
+#alias bws='bitwig-studio'

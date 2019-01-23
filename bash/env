@@ -1,2 +1,2 @@
-export EDITOR="nano -wc"
+export EDITOR="vim"
 #export PATH=~/bin:$PATH

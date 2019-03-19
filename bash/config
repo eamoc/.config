@@ -113,8 +113,9 @@ if [ -d "$HOME/android-sdks/platform-tools" ] ; then
     PATH=$PATH:$HOME/android-sdks/platform-tools
 fi
 
-#Run startx on login
+# run startx on login
 
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-	exec startx
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+	startx
 fi
+

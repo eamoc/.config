@@ -1,9 +1,0 @@
-#Set urxvt parameters
-URxvt*scrollBar: false
-URxvt*background: black
-URxvt*foreground: white
-URxvt*font: xft:Monospace: size=12: antialias=true
-#URxvt*boldfont: xft:Monopace Bold: size=12: antialias=true
-URxvt*transparent: true
-URxvt*shading: 20
-

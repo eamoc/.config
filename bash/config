@@ -99,20 +99,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-#PATH ADDITIONS
-#/home/eamoc/Android/Sdk/platform-tools/
-
-#Set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-#Set PATH so it includes AndroidSDK
-if [ -d "$HOME/android-sdks/platform-tools" ] ; then
-    PATH=$PATH:$HOME/android-sdks/platform-tools
-fi
-
 # run startx on login
 
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then

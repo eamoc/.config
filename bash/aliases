@@ -43,8 +43,8 @@ alias ....='cd ../../..'
 alias !!!='sudo !!'
 
 #Install and remove
-alias inst='sudo apt-get install'
-alias remo='sudo apt-get remove'
+alias i_='sudo xpbs-install -S'
+alias r_='sudo xpbs-remove'
 
 #Bitwig Studio
 #alias bws='bitwig-studio'

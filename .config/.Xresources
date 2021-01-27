@@ -1,9 +1,0 @@
-
-URxvt.scrollBar: false
-URxvt.foreground: white
-URxvt.background: black
-URxvt.font: xft:Aller:style=Regular:size=12
-URxvt.boldFont: xft:Aller:style=Bold:size=12
-URxvt.transparent: true 
-URxvt.shading: 25
-URxvt.letterSpace:-5

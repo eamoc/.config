@@ -1,10 +1,34 @@
 #!/bin/bash
 #Post-install Script for my void distribution
 
-#Update the packages to the most recent version 
+#printf "\n\nUpdating packages to latest version\n\n"
+#sudo xbps-install -Suvy
 
-printf "\n\nUpdating packages to latest version\n\n"
-sudo xbps-install -Suvy
+#Variables go here:
+
+#Check if tput exists:
+if ! command -v tput &> /dev/null; then
+	#tput could not be found
+	BOLD=""
+	RESET=""
+	FG_SKYBLUE=""
+	FG_ORANGE=""
+	BG_AQUA=""
+	FG_BLACK=""
+	FG_ORANGE=""
+	UL=""
+	RUL=""
+else
+	BOLD=$(tput bold)
+	RESET=$(tput sgr0)
+	FG_SKYBLUE=$(tput setaf 122)
+	FG_ORANGE=$(tput setaf 208)
+	BG_AQUA=$(tput setab 45)
+	FG_BLACK=$(tput setaf 16)
+	FG_ORANGE=$(tput setaf 214)
+	UL=$(tput smul)
+	RUL=$(tput rmul)
+fi
 
 #Download some required packages:
 doPackageInstall()
@@ -13,7 +37,7 @@ doPackageInstall()
 	printf "\nInstalling the Xorg server, input drivers and a few additional utilities\n\n"                 		
 	sudo xbps-install -Svy xorg-minimal
 	printf "\nInstalling Basic font files and font encoding utilites\n\n"
-	sudo xbps-install -Svy xorg-fonts						  
+	sudo xbps-install -Svy xorg-fonts	
 	printf "\nInstalling xterm emulator\n\n"
 	sudo xbps-install -Svy xterm					
 	printf "\nInstalling clock for twm\n\n"
@@ -23,7 +47,7 @@ doPackageInstall()
 	printf "\nInstalling Terminal multiplexer\n\n"
 	sudo xbps-install -Svy tmux					
 	printf "\nInstalling AMD video driver\n\n" 
-	sudo xbps-install -Svy xfree86-video-amdgpu
+	sudo xbps-install -Svy xf86-video-amdgpu
 	printf "\nInstalling Source code control versioning system\n\n"
 	sudo xbps-install -Svy git				
 	printf "\nInstalling THE text editor :-)\n\n"
@@ -34,7 +58,7 @@ doPackageInstall()
 	udo xbps-install -Svy feh				
 	printf "\nInstalling a utility for displaying window and font properties in an X server\n\n"
 	sudo xbps-install -Svy xprop				
-	printf "\nInstalling a utility that sets the size orientation and/or the reflection of the outputs for a screen. It can also set the screen size\n\n"
+	printf "\nInstalling a utility that sets the size orientation and/or the reflection of the outputs for a screen.\n\n"
 	sudo xbps-install -Svy xrandr			
 	printf "\nInstalling a visual front end for arandr\n\n"
 	sudo xbps-install -Svy arandr			
@@ -56,74 +80,83 @@ doPackageInstall()
 	sudo xbps-install -Svy curl				
 	printf "\nInstalling Wget. It's similar to Curl\n\n" 
 	sudo xbps-install -Svy wget					
-	printf"\nInstalling fluxbox Desktop environment"
-	sudo xbps-install -Svy fluxbox
+	printf "\nInstalling dropbox.\n\n"
+	sudo xbps-install -Svy dropbox
+	printf "\nInstalling Python.\n\n"
+	sudo xbps-install -Svy python
+	printf "\nInstalling Cronie\n\n"
+	sudo xbps-install -Svy cronie
+	printf "\nInstalling OpenBox Desktop Environment\n\n"
+	sudo xbps-install -Svy openbox
+	print "Installing the X config merge tool\n\n"
+	sudo xbps-install -Svy xrdb
+	printf "installing a utility for modifying keymaps and pointer button mappings in X\n\n"
+	sudo xbps-install -Svy xmodmap
 }
 
-#Setup the Source packages tree
-doSourceTreeInit()
-{
-	printf "Setting up the source packages tree"
-	cd ~
-	git clone git://github.com/void-linux/void-packages.git
-	cd void-packages
-	./xbps-src binary-bootstrap
-}
 
-#Implememt the dotfile environment
+#Implement the dotfile environment
 init_dotFileCheck()
 {
 	#Check whether it a first time use
 	if [[ -z ${DOT_REPO} && -z ${DOT_DEST} ]]; then
+
 		#Show first time setup menu
-		#inital setup
+		initialSetup
+
 	else
 		#repo_check
-		#manage
+		manage
 		fi
 }
-initial_setup()
+
+initialSetup()
 {
 	echo -e "\n\nFirst time use, Set Up The Environment"
 	echo -e "..........................................\n"
-	read -p "Enter dotfiles repository URL : " -r DOT_REPO
-	read -p "Where should the repo be cloned to $(basename "${DOT_REPO}") (${HOME}/..): " -r DOT_DEST
+	read -p "Enter dotfiles repository URL : " -r DOT_REPO #Hint: It is usually called '.config'
+	read -p "Where should $BOLD$(basename "${DOT_REPO}")$RESET be cloned to. (Defaults to ${HOME}): " -r DOT_DEST
+
 	DOT_DEST=${DOT_DEST:-$HOME}
+
+	#Cloning into a directory other than $HOME that already exists
 	if [[ -d "$HOME/$DOT_DEST" ]]; then
-		#Clone the repository in the destination directory
-		if git -C "${HOME}/${DOT_DEST}" clone "${DOT_REPO}"; then
-			add_env "$DOT_REPO" "$DOT_DEST"
-			echo -e "\nEnvironment properly configured"
-			goodbye
-		else
-			#invalid arguments to exit, Repostory not found
-			echo -e "\n$DOT_REPO Unavailable, exiting"
-			exit 1
-		fi
+		cloneRepo		
+	
+	#Cloning into a directory other than $HOME that does not exist, but will now be created	
+	elif ! [[ -d "$HOME/$DOT_DEST" ]] &&  [[ $HOME != $DOT_DEST ]]; then 
+		echo "Creating $BOLD$DOT_DEST$RESET..." 
+		mkdir $HOME/$DOT_DEST
+		cloneRepo		
+	
+	#Cloning into the $HOME Directory
+	elif [[ $HOME = $DOT_DEST ]]; then
+		cloneRepo
+	
 	else
 		echo -e "\n$DOT_DEST Not a valid directory"
 		exit 1
 	fi
 }
+
 add_env()
 {
 	#export environment variables
 	echo -e "\nExporting env variables DOT_DEST & DOT_REPO ..."
 
 	current_shell=$(basename "$SHELL")
-	if [[ $current_shell == "zsh" ]]; then
-		echo "export DOT_REPO=$1" >> "$HOME"/.zshrc"
-		echo "export DOT_DEST=$1" >> "$HOME"/.zshrc"
 
-	elif [[ $current_shell == "bash" ]]; then
-		echo "export DOT_REPO=$1" >> "$HOME"/.bashrc"
-		echo "export DOT_DEST=$1" >> "$HOME"/.bashrc"
+	if [[ $current_shell == "bash" ]]; then
+		echo "export DOT_REPO=$DOT_REPO" >> "$HOME"/.bashrc
+		echo "export DOT_DEST=$DOT_DEST" >> "$HOME"/.bashrc
 	else
 		echo "Couldn't export DOT_REPO and DOT_DEST."
 		echo "Consider exporting them manually."
 		exit 1
 	fi
-	echo -e "Configuration for SHELL: $current_shell has been updated."
+
+	echo -e "Configuration for $BOLD$current_shell$RESET has been updated."
+}
 
 #Display the configure options	
 manage()
@@ -144,7 +177,7 @@ manage()
 			[2]* ) dot_push;;
 			[3]* ) dot_pull;;
 			[4]* ) find_dotfiles;;
-			[q/Q]* ) exit;;
+			[q/Q]* ) echo -e "\n"; exit;;
 			*)	printf "\n%s\n" "Invalid Input, Try Again";;
 		esac
 	done
@@ -170,19 +203,19 @@ diff_check()
 
 	# check length here ?
 	for (( i=0; i<"${#dotfiles_repo[@]}"; i++))
-	do
-		dotfile_name=$(basename "${dotfiles_repo[$i]}")
-		#Compare the HOME version of dotfile to that of repo
-		diff=$(diff -u --supress-common-lines --color=always "${dotfile_repo[$i]}" "${HOME}/${dotfile_name}")
-		if [[ $diff != ""]]; then
-			if [[ $1 == "show" ]]; then
-				printf "\n\n%s" "Running diff between ${HOME}/${dotfile_name} and "
-				printf "%s\n\n" "${dotfiles_repo[$i]}"
-				printf "%s\n\n" "$diff"
-			fi
-			file_arr+=("${dotfile_name}")
-		fi
-	done
+#	do
+	#	dotfile_name=$(basename "${dotfiles_repo[$i]}")
+	#	#Compare the HOME version of dotfile to that of repo
+	#	diff=$(diff -u --supress-common-lines --color=always "${dotfile_repo[$i]}" "${HOME}/${dotfile_name}")
+	#	if [[ $diff != ""]]; then
+	#		if [[ $1 == "show" ]]; then
+	#			printf "\n\n%s" "Running diff between ${HOME}/${dotfile_name} and "
+	#			printf "%s\n" "${dotfiles_repo[$i]}"
+	#			printf "%s\n\n" "$diff"
+	#		fi
+	#		file_arr+=("${dotfile_name}")
+	#	fi
+#	done
 	if [[ ${#file_arr} == 0 ]]; then
 		echo -e "\n\nNo Changes in dotfiles."
 		return
@@ -194,3 +227,70 @@ show_diff_check()
 	diff_check "show"
 }
 
+goodbye()
+{
+	echo "Goodbye!"
+	exit
+}
+	
+
+cloneRepo()
+{
+	if [[ "$HOME" = "$DOT_DEST" ]]; then
+				
+		#Clone the repository in the home directory
+		if git -C "${HOME}" clone "${DOT_REPO}"; then
+			add_env "$DOT_REPO" "$DOT_DEST"
+			echo -e "\nEnvironment properly configured"
+			goodbye
+		fi
+
+		elif [[ "$HOME" != "$DOT_DEST" ]]; then
+		
+		#Clone the repository in the destination directory
+		if git -C "${HOME}/${DOT_DEST}" clone "${DOT_REPO}"; then
+			add_env "$DOT_REPO" "$DOT_DEST"
+			echo -e "\nEnvironment properly configured"
+			goodbye
+		fi
+		
+	else
+		#Invalid arguments to exit, Repository not found
+		echo -e "\n$DOT_REPO Unavailable, exiting"
+		exit 1
+		echo -e "The source packages tree is already set up.\n"
+	fi
+}
+
+
+createDirectories()
+{
+	if [[ -d ${HOME}/tmp ]] ; then
+		echo -e "The temporary directory $BOLD$HOME/tmp$RESET already exists. Skipping..."
+	else
+		mkdir $HOME/tmp
+	fi
+
+
+	if [[ -d ${HOME}/BACKUP ]] ; then
+		echo -e "The temporary directory $BOLD$HOME/BACKUP$RESET already exists. Skipping..."
+	else
+		mkdir $HOME/BACKUP
+	fi
+
+	
+	if [[ -d ${HOME}/void-packages ]] ; then
+		echo -e "The temporary directory $BOLD$HOME/void-packages$RESET already exists. Skipping..."
+	else
+		echo -e "Setting the source packages Tree...."
+		cd $HOME 
+		git clone git://github.com/void-linux/void-packages.git
+		cd void-packages
+		./xbps-src binary-bootstrap
+	fi
+}
+
+#Call the functions above...
+doPackageInstall
+init_dotFileCheck
+createDirectories

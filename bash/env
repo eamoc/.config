@@ -1,10 +1,9 @@
 #Environment variables
-
-export EDITOR="vim"
-#export VULKAN_SDK="/home/eamoc/MyStuff/VulcanSDK/1.1.101.0/x86_64"
-#export LD_LIBRARY_PATH="VULKAN_SDK/lib"
-#export VK_LAYER_PATH="$VULKAN_SDK/etc/explicit_layer.d"
-export TERMINAL="rxvt-unicode"
+export EDITOR=vim
+export TERMINAL=rxvt-unicode
+export GIT_EDITOR=vim
+export DOT_REPO=https://github.com/eamoc/.config
+export DOT_DEST=/home/eamoc
 
 #Path Additions
 #Set PATH so it includes user's private bin if it exists
@@ -12,15 +11,6 @@ if [ -d $HOME/bin ] ; then
 	PATH="$HOME/bin:$PATH"
 fi
 
-#Set PATH so it includes AndroidSDK
-#if [ -d $HOME/android-sdks/platform-tools" ] ; then
-#	PATH=$PATH:$HOME/android-sdks/platform-tools
-#fi
-
-#Set PATH so it includes the Vulkan SDK
-if [ -d $VULKAN_SDK/bin ] ; then
-	PATH="$VULKAN_SDK/bin:$PATH"
-fi
 
 
 

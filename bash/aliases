@@ -1,4 +1,5 @@
-# some more ls aliases
+# ls aliases
+alias ls='ls --color=auto'
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
@@ -19,17 +20,11 @@ alias gba='git branch -a'
 alias gpom='git push origin master'
 alias grao='git remote add origin'
 
-#Emacs
-alias em='emacs -nw'
-
-#Sublime Editor
-alias sb='sublime'
-
 #matlab
-alias ml='sudo matlab -nosoftwareopengl'
+#alias ml='sudo matlab -nosoftwareopengl'
 
 #start samba
-alias smb='sudo service smbd start && sudo service nmbd start'
+#alias smb='sudo service smbd start && sudo service nmbd start'
 
 #clear Screen
 alias c='clear'
@@ -39,12 +34,14 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-#Redo last command
+#Redo last command as sudo
 alias !!!='sudo !!'
 
 #Install and remove
-alias i_='sudo xbps-install -S'
-alias r_='sudo xbps-remove'
+alias _i='sudo xbps-install -S'
+alias _r='sudo xbps-remove'
+alias _l='xbps-query -l'
+alias _qr='xbps-query -Rs'
 
 #Bitwig Studio
 #alias bws='bitwig-studio'

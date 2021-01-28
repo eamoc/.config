@@ -1,17 +1,20 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/dotfiles/bash/aliases ]; then
-    . ~/dotfiles/bash/aliases
+if [ -f ~/.config/bash/aliases ]; then
+    . ~/.config/bash/aliases
 fi
 
-if [ -f ~/dotfiles/bash/config ]; then
-    . ~/dotfiles/bash/config
+if [ -f ~/.config/bash/config ]; then
+    . ~/.config/bash/config
 fi
 
-if [ -f ~/dotfiles/bash/env ]; then
-    . ~/dotfiles/bash/env   
+if [ -f ~/config/bash/env ]; then
+    . ~/config/bash/env   
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -24,4 +27,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-

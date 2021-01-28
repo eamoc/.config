@@ -7,12 +7,6 @@ export DOT_DEST=/home/eamoc
 
 #Path Additions
 #Set PATH so it includes user's private bin if it exists
-if [ -d $HOME/bin ] ; then
-	PATH="$HOME/bin:$PATH"
+if [ -d ~/bin ]; then
+	PATH=$HOME/bin:$PATH
 fi
-
-
-
-
-
-

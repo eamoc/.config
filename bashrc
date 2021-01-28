@@ -13,8 +13,8 @@ if [ -f ~/.config/bash/config ]; then
     . ~/.config/bash/config
 fi
 
-if [ -f ~/config/bash/env ]; then
-    . ~/config/bash/env   
+if [ -f ~/.config/bash/env ]; then
+    . ~/.config/bash/env   
 fi
 
 # enable programmable completion features (you don't need to enable

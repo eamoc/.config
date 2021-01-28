@@ -197,25 +197,25 @@ diff_check()
 	if [[ -z $1 ]]; then
 		declare -ag file_arr
 	fi
-	
+
 	#dotfiles in repository
 	readarray -t dotfiles_repo  < <( find "${HOME}/${DOT_DEST}/$(basename "${DOT_REPO}")" -maxdepth 1 -name ".*" -type f )
 
 	# check length here ?
 	for (( i=0; i<"${#dotfiles_repo[@]}"; i++))
-#	do
-	#	dotfile_name=$(basename "${dotfiles_repo[$i]}")
-	#	#Compare the HOME version of dotfile to that of repo
-	#	diff=$(diff -u --supress-common-lines --color=always "${dotfile_repo[$i]}" "${HOME}/${dotfile_name}")
-	#	if [[ $diff != ""]]; then
-	#		if [[ $1 == "show" ]]; then
-	#			printf "\n\n%s" "Running diff between ${HOME}/${dotfile_name} and "
-	#			printf "%s\n" "${dotfiles_repo[$i]}"
-	#			printf "%s\n\n" "$diff"
-	#		fi
-	#		file_arr+=("${dotfile_name}")
-	#	fi
-#	done
+	do
+		dotfile_name=$(basename "${dotfiles_repo[$i]}")
+		#Compare the HOME version of dotfile to that of repo
+		diff=$(diff -u --supress-common-lines --color=always "${dotfile_repo[$i]}" "${HOME}/${dotfile_name}")
+		if [[ $diff != "" ]]; then
+			if [[ $1 == "show" ]]; then
+				printf "\n\n%s" "Running diff between ${HOME}/${dotfile_name} and "
+				printf "%s\n" "${dotfiles_repo[$i]}"
+				printf "%s\n\n" "$diff"
+			fi
+			file_arr+=("${dotfile_name}")
+		fi
+	done
 	if [[ ${#file_arr} == 0 ]]; then
 		echo -e "\n\nNo Changes in dotfiles."
 		return
@@ -291,6 +291,6 @@ createDirectories()
 }
 
 #Call the functions above...
-doPackageInstall
+#doPackageInstall
 init_dotFileCheck
 createDirectories

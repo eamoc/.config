@@ -1,0 +1,11 @@
+#locale specific setting for Irish keyboard layout
+#must be symlinked to /usr/share/X11/xorg.conf.d/20-keyboard.conf
+
+Section "InputClass"
+ Identifier "system keyboard"
+ MatchIsKeyboard "on" # Limit these settings to keyboards
+ # Keyboard layout - comma-separated list for multiple layouts
+ Option "XkbLayout" "ie"
+ # Keyboard variant - comma-separated list matching XkbLayout line
+  Option "XkbVariant" ",qwerty"
+EndSection 

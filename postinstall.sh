@@ -224,73 +224,125 @@ diff_check()
 
 show_diff_check()
 {
-	diff_check "show"
+    diff_check "show"
 }
 
 goodbye()
 {
-	echo "Goodbye!"
-	exit
+    echo "Goodbye!"
+    exit
 }
 	
 
 cloneRepo()
 {
-	if [[ "$HOME" = "$DOT_DEST" ]]; then
+    if [[ "$HOME" = "$DOT_DEST" ]]; then
 				
-		#Clone the repository in the home directory
-		if git -C "${HOME}" clone "${DOT_REPO}"; then
-			add_env "$DOT_REPO" "$DOT_DEST"
-			echo -e "\nEnvironment properly configured"
-			goodbye
-		fi
-
-		elif [[ "$HOME" != "$DOT_DEST" ]]; then
-		
-		#Clone the repository in the destination directory
-		if git -C "${HOME}/${DOT_DEST}" clone "${DOT_REPO}"; then
-			add_env "$DOT_REPO" "$DOT_DEST"
-			echo -e "\nEnvironment properly configured"
-			goodbye
-		fi
-		
-	else
-		#Invalid arguments to exit, Repository not found
-		echo -e "\n$DOT_REPO Unavailable, exiting"
-		exit 1
-		echo -e "The source packages tree is already set up.\n"
+        #Clone the repository in the home directory
+	if git -C "${HOME}" clone "${DOT_REPO}"; then
+		add_env "$DOT_REPO" "$DOT_DEST"
+		echo -e "\nEnvironment properly configured"
+		goodbye
 	fi
+
+    elif [[ "$HOME" != "$DOT_DEST" ]]; then
+		
+	#Clone the repository in the destination directory
+	if git -C "${HOME}/${DOT_DEST}" clone "${DOT_REPO}"; then
+		add_env "$DOT_REPO" "$DOT_DEST"
+		echo -e "\nEnvironment properly configured"
+		goodbye
+	fi
+	
+    else
+	#Invalid arguments to exit, Repository not found
+	echo -e "\n$DOT_REPO Unavailable, exiting"
+	exit 1
+	echo -e "The source packages tree is already set up.\n"
+    fi
 }
 
 
 createDirectories()
 {
-	if [[ -d ${HOME}/tmp ]] ; then
-		echo -e "The temporary directory $BOLD$HOME/tmp$RESET already exists. Skipping..."
-	else
-		mkdir $HOME/tmp
-	fi
+    if [[ -d ${HOME}/tmp ]] ; then
+        echo -e "The temporary directory $BOLD$HOME/tmp$RESET already exists. Skipping..."
+    else
+	mkdir $HOME/tmp
+    fi
 
 
-	if [[ -d ${HOME}/BACKUP ]] ; then
-		echo -e "The temporary directory $BOLD$HOME/BACKUP$RESET already exists. Skipping..."
-	else
-		mkdir $HOME/BACKUP
-	fi
+    if [[ -d ${HOME}/BACKUP ]] ; then
+	echo -e "The temporary directory $BOLD$HOME/BACKUP$RESET already exists. Skipping..."
+    else
+	mkdir $HOME/BACKUP
+    fi
 
-	
-	if [[ -d ${HOME}/void-packages ]] ; then
-		echo -e "The temporary directory $BOLD$HOME/void-packages$RESET already exists. Skipping..."
-	else
-		echo -e "Setting the source packages Tree...."
-		cd $HOME 
-		git clone git://github.com/void-linux/void-packages.git
-		cd void-packages
-		./xbps-src binary-bootstrap
-	fi
+    if [[ -d ${HOME}/void-packages ]] ; then
+	echo -e "The temporary directory $BOLD$HOME/void-packages$RESET already exists. Skipping..."
+    else
+	echo -e "Setting the source packages Tree...."
+	cd $HOME 
+	git clone git://github.com/void-linux/void-packages.git
+	cd void-packages
+	./xbps-src binary-bootstrap
+    fi
+}
+
+addSymbolicLinks()
+{
+    if [[ -f $HOME}/.xinitrc ]] ; then
+        rm .xinitrc
+        echo "Deleted existing .xinitrc\n\n"
+        ln -s $HOME/.config/XINITRC $HOME/.xinitrc
+        echo "Created new symbolic link -> .xinitrc"
+  
+    else
+        ln -s $HOME/.config/XINITRC $HOME/.xinitrc
+        echo "Created new symbolic link -> .xinitrc"
+    fi
+
+    if [[ -f $HOME}/.Xresources ]] ; then
+        rm .Xresources
+        echo "Deleted existing .Xresources\n\n"
+        ln -s $HOME/.config/XRESOURCES $HOME/.Xresources
+        echo "Created new symbolic link -> .Xresources."
+
+    else
+        ln -s $HOME/.config/XRESOURCES $HOME/.Xresources
+        echo "Created new symbolic link -> .Xresources"
+    fi
+
+    if [[ -f $HOME}/.asoundrc ]] ; then
+        rm .asoundrc
+        echo "Deleted existing .asoundrc\n\n"
+        ln -s $HOME/.config/AUDIO_CONFIG $HOME/.asoundrc
+        echo "Created new symbolic link -> .asoundrc"
+    
+    else
+        ln -s $HOME/.config/AUDIO_CONFIG $HOME/.asoundrc
+        echo "Created new symbolic link -> .asoundrc"
+    fi
+
+    if [[ -f $HOME}/.vimrc ]] ; then
+        rm .vimrc
+        echo "Deleted existing .vimrc\n\n"
+        ln -s $HOME/.config/VIM_RC $HOME/.vimrc
+        echo "Created new symbolic link -> .vimrc"
+    
+    else
+        ln -s $HOME/.config/VIM_RC $HOME/.vimrc
+        echo "Created new symbolic link -> .vimrc"
+    fi
+
+   
+    if [[ -d /usr/share/X11/xorg.conf.d/ ]] ; then
+        sudo ln -s $HOME/.config/IRISH_XORG_LOCALE /usr/share/X11/xorg.conf.d/20-keyboard.conf
+    fi
 }
 
 #Call the functions above...
 #doPackageInstall
 init_dotFileCheck
 createDirectories
+addSymbolicLinks

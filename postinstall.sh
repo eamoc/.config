@@ -62,8 +62,8 @@ doPackageInstall()
 	sudo xbps-install -Svy xrandr			
 	printf "\nInstalling a visual front end for arandr\n\n"
 	sudo xbps-install -Svy arandr			
-	printf "\nInstalling xrvt-unicode terminal editor\n\n"
-	sudo xbps-install -Svy xrvt-unicode			
+	printf "\nInstalling rxvt-unicode terminal editor\n\n"
+	sudo xbps-install -Svy rxvt-unicode			
 	printf "\nInstalling GNU compiler and associated development utilities\n\n"
 	sudo xbps-install -Svy base-devel			
 	printf "\nInstalling IRC chat client\n\n"
@@ -92,6 +92,8 @@ doPackageInstall()
 	sudo xbps-install -Svy xrdb
 	printf "installing a utility for modifying keymaps and pointer button mappings in X\n\n"
 	sudo xbps-install -Svy xmodmap
+	printf "Installing the Firefox Web Browser\n\n"
+	sudo xbps-install -Svy firefox
 }
 
 createDirectories()

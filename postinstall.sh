@@ -341,6 +341,7 @@ addSymbolicLinks()
     fi
 }
 
+
 #Call the functions above...
 #doPackageInstall
 init_dotFileCheck

@@ -30,6 +30,11 @@ alias grao='git remote add origin'
 #clear Screen
 alias c='clear'
 
+#Shutdown and Reboot the machine
+alias sd='sudo shutdown -h now'
+alias rb='sudo reboot'
+
+
 #Moving up directories
 alias ..='cd ..'
 alias ...='cd ../..'

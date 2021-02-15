@@ -94,6 +94,93 @@ doPackageInstall()
 	sudo xbps-install -Svy xmodmap
 }
 
+createDirectories()
+{
+    if [[ -d ${HOME}/tmp ]] ; then
+        echo -e "The temporary directory $BOLD$HOME/tmp$RESET already exists. Skipping..."
+    else
+	mkdir $HOME/tmp
+    fi
+
+
+    if [[ -d ${HOME}/BACKUP ]] ; then
+	echo -e "The temporary directory $BOLD$HOME/BACKUP$RESET already exists. Skipping..."
+    else
+	mkdir $HOME/BACKUP
+    fi
+
+    if [[ -d ${HOME}/void-packages ]] ; then
+	echo -e "The temporary directory $BOLD$HOME/void-packages$RESET already exists. Skipping..."
+    else
+	echo -e "Setting the source packages Tree...."
+	cd $HOME 
+	git clone git://github.com/void-linux/void-packages.git
+	cd void-packages
+	./xbps-src binary-bootstrap
+    fi
+}
+
+addSymbolicLinks()
+{
+    if [[ -f $HOME}/.xinitrc ]] ; then
+        rm .xinitrc
+        echo "Deleted existing .xinitrc\n\n"
+        ln -s $HOME/.config/XINITRC $HOME/.xinitrc
+        echo "Created new symbolic link -> .xinitrc"
+  
+    else
+        ln -s $HOME/.config/XINITRC $HOME/.xinitrc
+        echo "Created new symbolic link -> .xinitrc"
+    fi
+
+    if [[ -f $HOME}/.Xresources ]] ; then
+        rm .Xresources
+        echo "Deleted existing .Xresources\n\n"
+        ln -s $HOME/.config/XRESOURCES $HOME/.Xresources
+        echo "Created new symbolic link -> .Xresources."
+
+    else
+        ln -s $HOME/.config/XRESOURCES $HOME/.Xresources
+        echo "Created new symbolic link -> .Xresources"
+    fi
+
+    if [[ -f $HOME}/.asoundrc ]] ; then
+        rm .asoundrc
+        echo "Deleted existing .asoundrc\n\n"
+        ln -s $HOME/.config/AUDIO_CONFIG $HOME/.asoundrc
+        echo "Created new symbolic link -> .asoundrc"
+    
+    else
+        ln -s $HOME/.config/AUDIO_CONFIG $HOME/.asoundrc
+        echo "Created new symbolic link -> .asoundrc"
+    fi
+
+    if [[ -f $HOME}/.vimrc ]] ; then
+        rm .vimrc
+        echo "Deleted existing .vimrc\n\n"
+        ln -s $HOME/.config/VIM_RC $HOME/.vimrc
+        echo "Created new symbolic link -> .vimrc"
+    
+    else
+        ln -s $HOME/.config/VIM_RC $HOME/.vimrc
+        echo "Created new symbolic link -> .vimrc"
+    fi
+
+   
+    if [[ -d /usr/share/X11/xorg.conf.d/ ]] ; then
+        sudo ln -s $HOME/.config/IRISH_XORG_LOCALE /usr/share/X11/xorg.conf.d/20-keyboard.conf
+    fi
+}
+
+
+#Call the functions above...
+doPackageInstall
+createDirectories
+addSymbolicLinks
+
+#-----------
+#The Below will be implemented at a later date
+#-----------
 
 #Implement the dotfile environment
 init_dotFileCheck()
@@ -263,87 +350,3 @@ cloneRepo()
 }
 
 
-createDirectories()
-{
-    if [[ -d ${HOME}/tmp ]] ; then
-        echo -e "The temporary directory $BOLD$HOME/tmp$RESET already exists. Skipping..."
-    else
-	mkdir $HOME/tmp
-    fi
-
-
-    if [[ -d ${HOME}/BACKUP ]] ; then
-	echo -e "The temporary directory $BOLD$HOME/BACKUP$RESET already exists. Skipping..."
-    else
-	mkdir $HOME/BACKUP
-    fi
-
-    if [[ -d ${HOME}/void-packages ]] ; then
-	echo -e "The temporary directory $BOLD$HOME/void-packages$RESET already exists. Skipping..."
-    else
-	echo -e "Setting the source packages Tree...."
-	cd $HOME 
-	git clone git://github.com/void-linux/void-packages.git
-	cd void-packages
-	./xbps-src binary-bootstrap
-    fi
-}
-
-addSymbolicLinks()
-{
-    if [[ -f $HOME}/.xinitrc ]] ; then
-        rm .xinitrc
-        echo "Deleted existing .xinitrc\n\n"
-        ln -s $HOME/.config/XINITRC $HOME/.xinitrc
-        echo "Created new symbolic link -> .xinitrc"
-  
-    else
-        ln -s $HOME/.config/XINITRC $HOME/.xinitrc
-        echo "Created new symbolic link -> .xinitrc"
-    fi
-
-    if [[ -f $HOME}/.Xresources ]] ; then
-        rm .Xresources
-        echo "Deleted existing .Xresources\n\n"
-        ln -s $HOME/.config/XRESOURCES $HOME/.Xresources
-        echo "Created new symbolic link -> .Xresources."
-
-    else
-        ln -s $HOME/.config/XRESOURCES $HOME/.Xresources
-        echo "Created new symbolic link -> .Xresources"
-    fi
-
-    if [[ -f $HOME}/.asoundrc ]] ; then
-        rm .asoundrc
-        echo "Deleted existing .asoundrc\n\n"
-        ln -s $HOME/.config/AUDIO_CONFIG $HOME/.asoundrc
-        echo "Created new symbolic link -> .asoundrc"
-    
-    else
-        ln -s $HOME/.config/AUDIO_CONFIG $HOME/.asoundrc
-        echo "Created new symbolic link -> .asoundrc"
-    fi
-
-    if [[ -f $HOME}/.vimrc ]] ; then
-        rm .vimrc
-        echo "Deleted existing .vimrc\n\n"
-        ln -s $HOME/.config/VIM_RC $HOME/.vimrc
-        echo "Created new symbolic link -> .vimrc"
-    
-    else
-        ln -s $HOME/.config/VIM_RC $HOME/.vimrc
-        echo "Created new symbolic link -> .vimrc"
-    fi
-
-   
-    if [[ -d /usr/share/X11/xorg.conf.d/ ]] ; then
-        sudo ln -s $HOME/.config/IRISH_XORG_LOCALE /usr/share/X11/xorg.conf.d/20-keyboard.conf
-    fi
-}
-
-
-#Call the functions above...
-doPackageInstall
-#init_dotFileCheck
-createDirectories
-addSymbolicLinks

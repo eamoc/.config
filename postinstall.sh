@@ -343,7 +343,7 @@ addSymbolicLinks()
 
 
 #Call the functions above...
-#doPackageInstall
-init_dotFileCheck
+doPackageInstall
+#init_dotFileCheck
 createDirectories
 addSymbolicLinks

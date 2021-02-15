@@ -166,6 +166,17 @@ addSymbolicLinks()
         echo "Created new symbolic link -> .vimrc"
     fi
 
+    if [[ -f $HOME}/.bashrc ]] ; then
+        rm .bashrc
+        echo "Deleted existing .bashrc\n\n"
+        ln -s $HOME/.config/BASHRC $HOME/.bashrc
+        echo "Created new symbolic link -> .bashrc"
+    
+    else
+        ln -s $HOME/.config/BASHRC $HOME/.bashrc
+        echo "Created new symbolic link -> .bashrc"
+    fi
+
    
     if [[ -d /usr/share/X11/xorg.conf.d/ ]] ; then
         sudo ln -s $HOME/.config/IRISH_XORG_LOCALE /usr/share/X11/xorg.conf.d/20-keyboard.conf

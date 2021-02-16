@@ -44,7 +44,7 @@ alias ....='cd ../../..'
 alias !!!='sudo !!'
 
 #Install and remove
-alias _i='sudo xbps-install -S'
+alias _i='sudo xbps-install -Su'
 alias _r='sudo xbps-remove'
 
 #query local and remote packages

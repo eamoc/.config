@@ -94,6 +94,10 @@ doPackageInstall()
 	sudo xbps-install -Svy xmodmap
 	printf "Installing the Firefox Web Browser\n\n"
 	sudo xbps-install -Svy firefox
+	printf "Installing a system diagnostics tool\n\n"
+	sudo xbps-install -Svy inxi
+	printf "Installing a tool that restores iptables rules on boot\n\n"
+	sudo xbps-install -Svy runit-iptables
 }
 
 createDirectories()

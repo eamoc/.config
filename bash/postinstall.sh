@@ -104,6 +104,14 @@ doPackageInstall()
 	sudo xbps-install -Svy socklog
 	printf "Installing Void Linux config for Socklog \n\n"
 	sudo xbps-install -Svy socklog-void
+        printf "installing a suite for debugging and profiling programs"
+        sudo xbps-install -Svy valgrind
+        printf "installing Radare2, a hex editor, dissambler and debugger"
+        sudo xbps-install -Svy radare2
+        printf "Installing ired, Interactice raw editor"
+        sudo xbps-install ired
+        printf "Installing Cutter, a GUI for Radare2"
+        xbps-install -Svy cutter
 
 }
 

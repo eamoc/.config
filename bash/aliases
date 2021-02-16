@@ -46,6 +46,8 @@ alias !!!='sudo !!'
 #Install and remove
 alias _i='sudo xbps-install -S'
 alias _r='sudo xbps-remove'
+
+#query local and remote packages
 alias _l='xbps-query -l'
 alias _q='xbps-query -Rs'
 

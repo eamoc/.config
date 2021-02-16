@@ -98,6 +98,8 @@ doPackageInstall()
 	sudo xbps-install -Svy inxi
 	printf "Installing a tool that restores iptables rules on boot\n\n"
 	sudo xbps-install -Svy runit-iptables
+	printf "Installing an Internet utility suite\n\n"
+	sudo xbps-install -Svy inetutils
 }
 
 createDirectories()

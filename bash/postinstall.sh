@@ -100,6 +100,11 @@ doPackageInstall()
 	sudo xbps-install -Svy runit-iptables
 	printf "Installing an Internet utility suite\n\n"
 	sudo xbps-install -Svy inetutils
+	printf "Installing  the Socklog logger\n\n"
+	sudo xbps-install -Svy socklog
+	printf "Installing Void Linux config for Socklog \n\n"
+	sudo xbps-install -Svy socklog-void
+
 }
 
 createDirectories()
@@ -131,7 +136,7 @@ createDirectories()
 addSymbolicLinks()
 {
     if [[ -f $HOME}/.xinitrc ]] ; then
-        rm .xinitrc
+        rm $HOME/.xinitrc
         echo "Deleted existing .xinitrc\n\n"
         ln -s $HOME/.config/XINITRC $HOME/.xinitrc
         echo "Created new symbolic link -> .xinitrc"
@@ -142,7 +147,7 @@ addSymbolicLinks()
     fi
 
     if [[ -f $HOME}/.Xresources ]] ; then
-        rm .Xresources
+        rm $HOME/.Xresources
         echo "Deleted existing .Xresources\n\n"
         ln -s $HOME/.config/XRESOURCES $HOME/.Xresources
         echo "Created new symbolic link -> .Xresources."
@@ -153,7 +158,7 @@ addSymbolicLinks()
     fi
 
     if [[ -f $HOME}/.asoundrc ]] ; then
-        rm .asoundrc
+        rm $HOME/.asoundrc
         echo "Deleted existing .asoundrc\n\n"
         ln -s $HOME/.config/AUDIO_CONFIG $HOME/.asoundrc
         echo "Created new symbolic link -> .asoundrc"
@@ -164,7 +169,7 @@ addSymbolicLinks()
     fi
 
     if [[ -f $HOME}/.vimrc ]] ; then
-        rm .vimrc
+        rm $HOME/.vimrc
         echo "Deleted existing .vimrc\n\n"
         ln -s $HOME/.config/VIM_RC $HOME/.vimrc
         echo "Created new symbolic link -> .vimrc"
@@ -173,29 +178,71 @@ addSymbolicLinks()
         ln -s $HOME/.config/VIM_RC $HOME/.vimrc
         echo "Created new symbolic link -> .vimrc"
     fi
-
-    if [[ -f $HOME}/.bashrc ]] ; then
-        rm .bashrc
-        echo "Deleted existing .bashrc\n\n"
-        ln -s $HOME/.config/BASHRC $HOME/.bashrc
-        echo "Created new symbolic link -> .bashrc"
-    
-    else
-        ln -s $HOME/.config/BASHRC $HOME/.bashrc
-        echo "Created new symbolic link -> .bashrc"
-    fi
-
    
-    if [[ -d /usr/share/X11/xorg.conf.d/ ]] ; then
+   if [[ -d /usr/share/X11/xorg.conf.d/ ]] ; then
         sudo ln -s $HOME/.config/IRISH_XORG_LOCALE /usr/share/X11/xorg.conf.d/20-keyboard.conf
     fi
+
+
+# Adding symbolic links for iptables and ip6tables I.e enabling the services
+
+    if [[ -h /var/service/iptables ]] ; then
+        rm /var/service/iptables
+        echo "Deleted existing symlink for iptables\n\n"
+        ln -s /etc/sv/iptables /var/service 
+        echo "Created new symbolic link -> /var/service/iptables"
+    else
+        ln -s /etc/sv/iptables /var/service
+        echo "Created new symbolic link -> /var/service/iptables"
+    fi
+
+
+    if [[ -h /var/service/ip6tables ]] ; then
+        rm /var/service/ip6tables
+        echo "Deleted existing symlink for ipt6ables\n\n"
+        ln -s /etc/sv/ip6tables /var/service 
+        echo "Created new symbolic link -> /var/service/ip6tables"
+    else
+        ln -s /etc/sv/ip6tables /var/service
+        echo "Created new symbolic link -> /var/service/ip6tables"
+    fi
+
+# Symbolic links for socklog
+
+    if [[ -h /var/service/socklog-unix ]] ; then
+        rm /var/service/socklog-unix
+        echo "Deleted existing symlink for socklog-unix\n\n"
+        ln -s /etc/sv/socklog-unix /var/service 
+        echo "Created new symbolic link -> /var/service/socklog-unix"
+    else
+        ln -s /etc/sv/socklog-unix /var/service
+        echo "Created new symbolic link -> /var/service/socklog-unix"
+    fi
+
+
+    if [[ -h /var/service/nanoklogd ]] ; then
+        rm /var/service/nanoklogd
+        echo "Deleted existing symlink for nanoklogd\n\n"
+        ln -s /etc/sv/nanoklogd /var/service 
+        echo "Created new symbolic link -> /var/service/nanoklogd"
+    else
+        ln -s /etc/sv/nanoklogd /var/service
+        echo "Created new symbolic link -> /var/service/nanoklogd"
+    fi
+
 }
 
+usersAndGroups()
+{
+    #Adding the user to the socklog group
+    sudo usermod -aG $USER
+}
 
 #Call the functions above...
 doPackageInstall
 createDirectories
 addSymbolicLinks
+usersAndGroups
 
 #-----------
 #The Below will be implemented at a later date

@@ -51,5 +51,9 @@ alias _r='sudo xbps-remove'
 alias _l='xbps-query -l'
 alias _q='xbps-query -Rs'
 
+#Perform a full system upgrade
+alias _u='sudo xbps-install -Suv'
+
+
 #Bitwig Studio
 #alias bws='bitwig-studio'

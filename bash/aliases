@@ -21,19 +21,12 @@ alias gba='git branch -a'
 alias gpom='git push origin master'
 alias grao='git remote add origin'
 
-#matlab
-#alias ml='sudo matlab -nosoftwareopengl'
-
-#start samba
-#alias smb='sudo service smbd start && sudo service nmbd start'
-
 #clear Screen
 alias c='clear'
 
 #Shutdown and Reboot the machine
 alias sd='sudo shutdown -h now'
 alias rb='sudo reboot'
-
 
 #Moving up directories
 alias ..='cd ..'
@@ -54,6 +47,8 @@ alias _q='xbps-query -Rs'
 #Perform a full system upgrade
 alias _u='sudo xbps-install -Suv'
 
+#Update the mlocate database
+alias udb='sudo updatedb'
 
-#Bitwig Studio
-#alias bws='bitwig-studio'
+#source .bashrc
+alias src='. ~/.bashrc'

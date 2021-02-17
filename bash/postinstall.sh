@@ -112,7 +112,8 @@ doPackageInstall()
         sudo xbps-install ired
         printf "Installing Cutter, a GUI for Radare2"
         xbps-install -Svy cutter
-
+        printf "Installing a collection of tools for use with XBPS"
+        xbps-install -Svy xtools
 }
 
 createDirectories()

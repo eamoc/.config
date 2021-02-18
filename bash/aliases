@@ -53,3 +53,6 @@ alias udb='sudo updatedb'
 
 #source .bashrc
 alias src='. ~/.bashrc'
+
+#Open postinstall.sh in vim
+alias pi='cd ~/.config/bash/ && vim postinstall.sh'

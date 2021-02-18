@@ -34,112 +34,112 @@ fi
 doPackageInstall()
 {
 	printf "\nDownloading some required packages\n\n"
-	printf "\n\nInstalling the Xorg server, input drivers and a few additional utilities\n"
+	printf "\n\nInstalling the $BOLDXorg server, input drivers and a few additional utilities$RESET\n"
 	sudo xbps-install -Svy xorg-minimal
-	printf "\n\nInstalling Basic font files and font encoding utilites\n"
+	printf "\n\nInstalling $BOLDBasic font files and font encoding utilites$RESET\n"
 	sudo xbps-install -Svy xorg-fonts	
-	printf "\n\nInstalling xterm emulator\n"
+	printf "\n\nInstalling $BOLDxterm emulator$RESET\n"
 	sudo xbps-install -Svy xterm					
-	printf "\n\nInstalling clock for twm\n"
+	printf "\n\nInstalling $BOLDclock for twm$RESET\n"
 	sudo xbps-install -Svy clock				
-	printf "\n\nInstalling basic window wanager\n"
+	printf "\n\nInstalling $BOLDbasic window wanager$RESET\n"
 	sudo xbps-install -Svy twm					
-	printf "\n\nInstalling Terminal multiplexer\n"
+	printf "\n\nInstalling $BOLDTerminal multiplexer$RESET\n"
 	sudo xbps-install -Svy tmux					
-	printf "\n\nInstalling AMD video driver\n" 
+	printf "\n\nInstalling $BOLDAMD video driver$RESET\n" 
 	sudo xbps-install -Svy xf86-video-amdgpu
-	printf "\n\nInstalling Source code control versioning system\n"
+	printf "\n\nInstalling $BOLDSource code control versioning system$RESET\n"
 	sudo xbps-install -Svy git				
-	printf "\n\nInstalling THE text editor :-)\n"
+	printf "\n\nInstalling $BOLDTHE text editor :-)$RESET\n"
 	sudo xbps-install -Svy vim				
-	printf "\n\nInstalling location db and lookup utilities\n"
+	printf "\n\nInstalling $BOLDlocation db and lookup utilities$RESET\n"
 	sudo xbps-install -Svy mlocate			
-	printf "\n\nInstalling a simple image viewer\n"
+	printf "\n\nInstalling $BOLDa simple image viewer$RESET\n"
 	udo xbps-install -Svy feh				
-	printf "\n\nInstalling a utility for displaying window and font properties in an X server\n"
+	printf "\n\nInstalling $BOLDa utility for displaying window and font properties in an X server$RESET\n"
 	sudo xbps-install -Svy xprop				
-	printf "\n\nInstalling a utility that sets the size orientation and/or the reflection of the outputs for a screen.\n"
+	printf "\n\nInstalling $BOLDa utility that sets the size orientation and/or the reflection of the outputs for a screen.$RESET\n"
 	sudo xbps-install -Svy xrandr			
-	printf "\n\nInstalling a visual front end for arandr\n"
+	printf "\n\nInstalling $BOLDa visual front end for arandr$RESET\n"
 	sudo xbps-install -Svy arandr			
-	printf "\n\nInstalling rxvt-unicode terminal editor\n"
+	printf "\n\nInstalling $BOLDrxvt-unicode terminal editor$RESET\n"
 	sudo xbps-install -Svy rxvt-unicode			
-	printf "\n\nInstalling GNU compiler and associated development utilities\n"
+	printf "\n\nInstalling $BOLDGNU compiler and associated development utilities$RESET\n"
 	sudo xbps-install -Svy base-devel			
-	printf "\n\nInstalling IRC chat client\n"
+	printf "\n\nInstalling $BOLDIRC chat client$RESET\n"
 	sudo xbps-install -Svy irssi					
-	printf "\n\nInstalling Graphic image manipulation program\n"
+	printf "\n\nInstalling $BOLDGraphic image manipulation program$RESET\n"
 	sudo xbps-install -Svy gimp				
-	printf "\n\nInstalling text based music player\n"
+	printf "\n\nInstalling $BOLDtext based music player$RESET\n"
 	sudo xbps-install -Svy cmus					
-	printf "\n\nInstalling GUI based bittorrent client\n"
+	printf "\n\nInstalling $BOLDGUI based bittorrent client$RESET\n"
 	sudo xbps-install -Svy qbittorrent				
-	printf "\n\nInstalling Advanced Linux Sound Architercture files and utilities\n"
+	printf "\n\nInstalling $BOLDAdvanced Linux Sound Architercture files and utilities$RESET\n"
 	sudo xbps-install -Svy alsa-utils				
-	printf "\n\nInstalling Curl command line downloading tool\n"
+	printf "\n\nInstalling $BOLDCurl command line downloading tool$RESET\n"
 	sudo xbps-install -Svy curl				
-	printf "\n\nInstalling Wget. It's similar to Curl\n" 
+	printf "\n\nInstalling $BOLDWget. It's similar to Curl$RESET\n" 
 	sudo xbps-install -Svy wget					
-	printf "\n\nInstalling dropbox.\n"
+	printf "\n\nInstalling $BOLDdropbox.$RESET\n"
 	sudo xbps-install -Svy dropbox
-	printf "\n\nInstalling Python.\n"
+	printf "\n\nInstalling $BOLDPython.$RESET\n"
 	sudo xbps-install -Svy python
-	printf "\n\nInstalling Cronie\n"
+	printf "\n\nInstalling $BOLDCronie$RESET\n"
 	sudo xbps-install -Svy cronie
-	printf "\n\nInstalling OpenBox Desktop Environment\n"
+	printf "\n\nInstalling $BOLDOpenBox Desktop Environment$RESET\n"
 	sudo xbps-install -Svy openbox
-	printf "\n\nInstalling the X config merge tool\n"
+	printf "\n\nInstalling $BOLDthe X config merge tool$RESET\n"
 	sudo xbps-install -Svy xrdb
-	printf "\n\nInstalling a utility for modifying keymaps and pointer button mappings in X\n"
+	printf "\n\nInstalling $BOLDa utility for modifying keymaps and pointer button mappings in X$RESET\n"
 	sudo xbps-install -Svy xmodmap
-	printf "\n\nInstalling the Firefox Web Browser\n"
+	printf "\n\nInstalling $BOLDthe Firefox Web Browser$RESET\n"
 	sudo xbps-install -Svy firefox
-	printf "\n\nInstalling a system diagnostics tool\n"
+	printf "\n\nInstalling $BOLDa system diagnostics tool$RESET\n"
 	sudo xbps-install -Svy inxi
-	printf "\n\nInstalling a tool that restores iptables rules on boot\n"
+	printf "\n\nInstalling $BOLDa tool that restores iptables rules on boot$RESET\n"
 	sudo xbps-install -Svy runit-iptables
-	printf "\n\nInstalling an Internet utility suite\n"
+	printf "\n\nInstalling an $BOLDInternet utility suite$RESET\n"
 	sudo xbps-install -Svy inetutils
-	printf "\n\nInstalling  the Socklog logger\n"
+	printf "\n\nInstalling  the $BOLDSocklog logger$RESET\n"
 	sudo xbps-install -Svy socklog
-	printf "\n\nInstalling Void Linux config for Socklog\n"
+	printf "\n\nInstalling $BOLDVoid Linux config for Socklog$RESET\n"
 	sudo xbps-install -Svy socklog-void
-        printf "\n\nInstalling a suite for debugging and profiling programs\n"
+        printf "\n\nInstalling $BOLDa suite for debugging and profiling programs$RESET\n"
         sudo xbps-install -Svy valgrind
-        printf "\n\nInstalling Radare2, a hex editor, dissambler and debugger\n"
+        printf "\n\nInstalling $BOLDRadare2, a hex editor, dissambler and debugger$RESET\n"
         sudo xbps-install -Svy radare2
-        printf "\n\nInstalling ired, Interactice raw editor\n"
+        printf "\n\nInstalling $BOLDired, Interactice raw editor$RESET\n"
         sudo xbps-install -Svy ired
-        printf "\n\nInstalling Cutter, a GUI for Radare2\n"
+        printf "\n\nInstalling $BOLDCutter, a GUI for Radare2$RESET\n"
         sudo xbps-install -Svy cutter
-        printf "\n\nInstalling a collection of tools for use with XBPS\n"
+        printf "\n\nInstalling $BOLDa collection of tools for use with XBPS$RESET\n"
         sudo xbps-install -Svy xtools
 }
 
 createDirectories()
 {
-    if [[ -d ${HOME}/tmp ]] ; then
-        echo -e "The directory $BOLD$HOME/tmp$RESET already exists. Skipping..."
+    if [[ -d $HOME/tmp ]] ; then
+        printf "The directory $BOLD$HOME/tmp$RESET already exists. Skipping..."
     else
 	mkdir $HOME/tmp
     fi
 
-    if [[ -d ${HOME}/sCrAtCh ]] ; then
-	echo -e "The directory $BOLD$HOME/sCrAtCh$RESET already exists. Skipping..."
+    if [[ -d $HOME/sCrAtCh ]] ; then
+	printf "The directory $BOLD$HOME/sCrAtCh$RESET already exists. Skipping..."
     else
 	mkdir $HOME/sCrAtCh
     fi
 
-    if [[ -d ${HOME}/BACKUP ]] ; then
-	echo -e "The directory $BOLD$HOME/BACKUP$RESET already exists. Skipping..."
+    if [[ -d $HOME/BACKUP ]] ; then
+	printf "The directory $BOLD$HOME/BACKUP$RESET already exists. Skipping..."
     else
 	mkdir $HOME/BACKUP
     fi
 
-    if [[ -d ${HOME}/void-packages ]] ; then
-	echo -e "The directory $BOLD$HOME/void-packages$RESET already exists. Skipping..."
+    if [[ -d $HOME/void-packages ]] ; then
+	printf "The directory $BOLD$HOME/void-packages$RESET already exists. Skipping..."
     else
-	echo -e "Setting the source packages Tree...."
+	printf "Setting up the source packages Tree...."
 	cd $HOME 
 	git clone git://github.com/eamoc/void-packages.git
 	cd void-packages
@@ -152,72 +152,68 @@ configureHomeEnvironment()
 
     if [[ -f $HOME/.bashrc ]] ; then
         rm $HOME/.bashrc
-        echo "Deleted existing .bashrc\n\n"
+        printf "Deleted existing .bashrc\n\n"
         ln -s $HOME/.config/BASHRC $HOME/.bashrc
-        echo "Created new symbolic link -> .bashrc"
+        printf "Created new symbolic link -> .bashrc\n\n"
   
     else
         ln -s $HOME/.config/BASHRC $HOME/.bashrc
-        echo "Created new symbolic link -> .bashrc"
+        printf "Created new symbolic link -> .bashrc\n\n"
     fi
     
-    if [[ -f $HOME}/.xinitrc ]] ; then
+    if [[ -f $HOME/.xinitrc ]] ; then
         rm $HOME/.xinitrc
-        echo "Deleted existing .xinitrc\n\n"
+        printf "Deleted existing .xinitrc\n\n"
         ln -s $HOME/.config/XINITRC $HOME/.xinitrc
-        echo "Created new symbolic link -> .xinitrc"
+        printf "Created new symbolic link -> .xinitrc\n\n"
   
     else
         ln -s $HOME/.config/XINITRC $HOME/.xinitrc
-        echo "Created new symbolic link -> .xinitrc"
+        printf "Created new symbolic link -> .xinitrc\n\n"
     fi
 
-    if [[ -f $HOME}/.Xresources ]] ; then
+    if [[ -f $HOME/.Xresources ]] ; then
         rm $HOME/.Xresources
-        echo "Deleted existing .Xresources\n\n"
+        printf "Deleted existing .Xresources\n\n"
         ln -s $HOME/.config/XRESOURCES $HOME/.Xresources
-        echo "Created new symbolic link -> .Xresources."
+        printf "Created new symbolic link -> .Xresources\n\n"
 
     else
         ln -s $HOME/.config/XRESOURCES $HOME/.Xresources
-        echo "Created new symbolic link -> .Xresources"
+        printf "Created new symbolic link -> .Xresources\n\n"
     fi
 
     if [[ -f $HOME/.asoundrc ]] ; then
         rm $HOME/.asoundrc
-        echo "Deleted existing .asoundrc\n\n"
+        printf "Deleted existing .asoundrc\n\n"
         ln -s $HOME/.config/AUDIO_CONFIG $HOME/.asoundrc
-        echo "Created new symbolic link -> .asoundrc"
+        printf "Created new symbolic link -> .asoundrc\n\n"
     
     else
         ln -s $HOME/.config/AUDIO_CONFIG $HOME/.asoundrc
-        echo "Created new symbolic link -> .asoundrc"
+        printf "Created new symbolic link -> .asoundrc\n\n"
     fi
 
     if [[ -f $HOME/.vimrc ]] ; then
         rm $HOME/.vimrc
-        echo "Deleted existing .vimrc\n\n"
+        printf "Deleted existing .vimrc\n\n"
         ln -s $HOME/.config/VIM_RC $HOME/.vimrc
-        echo "Created new symbolic link -> .vimrc"
+        printf "Created new symbolic link -> .vimrc\n\n"
     
     else
         ln -s $HOME/.config/VIM_RC $HOME/.vimrc
-        echo "Created new symbolic link -> .vimrc"
+        printf "Created new symbolic link -> .vimrc\n\n"
     fi
    
     if [[ -d /usr/share/X11/xorg.conf.d/ ]] ; then
+        printf "Setting up Irish keyboard locale\n"
         sudo ln -s $HOME/.config/IRISH_XORG_LOCALE /usr/share/X11/xorg.conf.d/20-keyboard.conf
     fi
 }
 
-usersAndGroups()
-{ 
-    #Adding the user to the socklog group
-}
-
 sourceBashrc()
 { 
-    echo "Updating .bashrc\n\n"
+    printf "Updating .bashrc\n\n"
     . ~/.bashrc
 }
 
@@ -227,22 +223,22 @@ doFirewallConfig()
 
     if [[ -h /var/service/iptables ]] ; then
         sudo rm /var/service/iptables
-        echo "Deleted existing symlink for iptables\n\n"
+        printf "Deleted existing symlink for iptables\n\n"
         sudo ln -s /etc/sv/iptables /var/service 
-        echo "Created new symbolic link -> /var/service/iptables"
+        printf "Created new symbolic link -> /var/service/iptables\n\n"
     else
         sudo ln -s /etc/sv/iptables /var/service
-        echo "Created new symbolic link -> /var/service/iptables"
+        printf "Created new symbolic link -> /var/service/iptables\n\n"
     fi
 
     if [[ -h /var/service/ip6tables ]] ; then
         sudo rm /var/service/ip6tables
-        echo "Deleted existing symlink for ipt6ables\n\n"
+        printf "Deleted existing symlink for ipt6ables\n\n"
         sudo ln -s /etc/sv/ip6tables /var/service 
-        echo "Created new symbolic link -> /var/service/ip6tables"
+        printf "Created new symbolic link -> /var/service/ip6tables\n\n"
     else
         sudo ln -s /etc/sv/ip6tables /var/service
-        echo "Created new symbolic link -> /var/service/ip6tables"
+        printf "Created new symbolic link -> /var/service/ip6tables\n\n"
     fi
 
     #Apply rulesets to iptables
@@ -260,31 +256,38 @@ doSocklogConfig()
 
     if [[ -h /var/service/socklog-unix ]] ; then
         sudo rm /var/service/socklog-unix
-        echo "Deleted existing symlink for socklog-unix\n\n"
+        printf "Deleted existing symlink for socklog-unix\n\n"
         sudo ln -s /etc/sv/socklog-unix /var/service 
-        echo "Created new symbolic link -> /var/service/socklog-unix"
+        printf "Created new symbolic link -> /var/service/socklog-unix"
     else
         sudo ln -s /etc/sv/socklog-unix /var/service
-        echo "Created new symbolic link -> /var/service/socklog-unix"
+        printf "Created new symbolic link -> /var/service/socklog-unix"
     fi
 
     if [[ -h /var/service/nanoklogd ]] ; then
         sudo rm /var/service/nanoklogd
-        echo "Deleted existing symlink for nanoklogd\n\n"
+        printf "Deleted existing symlink for nanoklogd\n\n"
         sudo ln -s /etc/sv/nanoklogd /var/service 
-        echo "Created new symbolic link -> /var/service/nanoklogd"
+        printf "Created new symbolic link -> /var/service/nanoklogd"
     else
         sudo ln -s /etc/sv/nanoklogd /var/service
-        echo "Created new symbolic link -> /var/service/nanoklogd"
+        printf "Created new symbolic link -> /var/service/nanoklogd"
     fi
     sudo usermod -aG socklog $USER
+}
 
+registerGit()
+{
+ printf "Registering the git user\n\n"
+ git config --global user.email $GIT_AUTHOR_EMAIL
+ git config --global user.name  $GIT_AUTHOR_NAME
 }
 
 #Call the functions above...
 doPackageInstall
 createDirectories
 configureHomeEnvironment
-doFireWallconfig
-#doSocklogConfig
 sourceBashrc
+registerGit
+doFirewallConfig
+#doSocklogConfig

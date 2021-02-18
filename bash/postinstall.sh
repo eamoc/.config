@@ -34,85 +34,85 @@ fi
 doPackageInstall()
 {
 	printf "\nDownloading some required packages\n\n"
-	printf "\nInstalling the Xorg server, input drivers and a few additional utilities\n\n"                 		
+	printf "\n\nInstalling the Xorg server, input drivers and a few additional utilities\n"
 	sudo xbps-install -Svy xorg-minimal
-	printf "\nInstalling Basic font files and font encoding utilites\n\n"
+	printf "\n\nInstalling Basic font files and font encoding utilites\n"
 	sudo xbps-install -Svy xorg-fonts	
-	printf "\nInstalling xterm emulator\n\n"
+	printf "\n\nInstalling xterm emulator\n"
 	sudo xbps-install -Svy xterm					
-	printf "\nInstalling clock for twm\n\n"
+	printf "\n\nInstalling clock for twm\n"
 	sudo xbps-install -Svy clock				
-	printf "\nInstalling basic window wanager\n\n"
+	printf "\n\nInstalling basic window wanager\n"
 	sudo xbps-install -Svy twm					
-	printf "\nInstalling Terminal multiplexer\n\n"
+	printf "\n\nInstalling Terminal multiplexer\n"
 	sudo xbps-install -Svy tmux					
-	printf "\nInstalling AMD video driver\n\n" 
+	printf "\n\nInstalling AMD video driver\n" 
 	sudo xbps-install -Svy xf86-video-amdgpu
-	printf "\nInstalling Source code control versioning system\n\n"
+	printf "\n\nInstalling Source code control versioning system\n"
 	sudo xbps-install -Svy git				
-	printf "\nInstalling THE text editor :-)\n\n"
+	printf "\n\nInstalling THE text editor :-)\n"
 	sudo xbps-install -Svy vim				
-	printf "\nInstalling location db and lookup utilities\n\n"
+	printf "\n\nInstalling location db and lookup utilities\n"
 	sudo xbps-install -Svy mlocate			
-	printf "\nInstalling a simple image viewer\n\n"
+	printf "\n\nInstalling a simple image viewer\n"
 	udo xbps-install -Svy feh				
-	printf "\nInstalling a utility for displaying window and font properties in an X server\n\n"
+	printf "\n\nInstalling a utility for displaying window and font properties in an X server\n"
 	sudo xbps-install -Svy xprop				
-	printf "\nInstalling a utility that sets the size orientation and/or the reflection of the outputs for a screen.\n\n"
+	printf "\n\nInstalling a utility that sets the size orientation and/or the reflection of the outputs for a screen.\n"
 	sudo xbps-install -Svy xrandr			
-	printf "\nInstalling a visual front end for arandr\n\n"
+	printf "\n\nInstalling a visual front end for arandr\n"
 	sudo xbps-install -Svy arandr			
-	printf "\nInstalling rxvt-unicode terminal editor\n\n"
+	printf "\n\nInstalling rxvt-unicode terminal editor\n"
 	sudo xbps-install -Svy rxvt-unicode			
-	printf "\nInstalling GNU compiler and associated development utilities\n\n"
+	printf "\n\nInstalling GNU compiler and associated development utilities\n"
 	sudo xbps-install -Svy base-devel			
-	printf "\nInstalling IRC chat client\n\n"
+	printf "\n\nInstalling IRC chat client\n"
 	sudo xbps-install -Svy irssi					
-	printf "\nInstalling Graphic image manipulation program\n\n"
+	printf "\n\nInstalling Graphic image manipulation program\n"
 	sudo xbps-install -Svy gimp				
-	printf "\nInstalling text based music player\n\n"
+	printf "\n\nInstalling text based music player\n"
 	sudo xbps-install -Svy cmus					
-	printf "\nInstalling GUI based bittorrent client\n\n"
+	printf "\n\nInstalling GUI based bittorrent client\n"
 	sudo xbps-install -Svy qbittorrent				
-	printf "\nInstalling Advanced Linux Sound Architercture files and utilities\n\n"
+	printf "\n\nInstalling Advanced Linux Sound Architercture files and utilities\n"
 	sudo xbps-install -Svy alsa-utils				
-	printf "\nInstalling Curl command line downloading tool\n\n"
+	printf "\n\nInstalling Curl command line downloading tool\n"
 	sudo xbps-install -Svy curl				
-	printf "\nInstalling Wget. It's similar to Curl\n\n" 
+	printf "\n\nInstalling Wget. It's similar to Curl\n" 
 	sudo xbps-install -Svy wget					
-	printf "\nInstalling dropbox.\n\n"
+	printf "\n\nInstalling dropbox.\n"
 	sudo xbps-install -Svy dropbox
-	printf "\nInstalling Python.\n\n"
+	printf "\n\nInstalling Python.\n"
 	sudo xbps-install -Svy python
-	printf "\nInstalling Cronie\n\n"
+	printf "\n\nInstalling Cronie\n"
 	sudo xbps-install -Svy cronie
-	printf "\nInstalling OpenBox Desktop Environment\n\n"
+	printf "\n\nInstalling OpenBox Desktop Environment\n"
 	sudo xbps-install -Svy openbox
-	printf "Installing the X config merge tool\n\n"
+	printf "\n\nInstalling the X config merge tool\n"
 	sudo xbps-install -Svy xrdb
-	printf "installing a utility for modifying keymaps and pointer button mappings in X\n\n"
+	printf "\n\nInstalling a utility for modifying keymaps and pointer button mappings in X\n"
 	sudo xbps-install -Svy xmodmap
-	printf "Installing the Firefox Web Browser\n\n"
+	printf "\n\nInstalling the Firefox Web Browser\n"
 	sudo xbps-install -Svy firefox
-	printf "Installing a system diagnostics tool\n\n"
+	printf "\n\nInstalling a system diagnostics tool\n"
 	sudo xbps-install -Svy inxi
-	printf "Installing a tool that restores iptables rules on boot\n\n"
+	printf "\n\nInstalling a tool that restores iptables rules on boot\n"
 	sudo xbps-install -Svy runit-iptables
-	printf "Installing an Internet utility suite\n\n"
+	printf "\n\nInstalling an Internet utility suite\n"
 	sudo xbps-install -Svy inetutils
-	printf "Installing  the Socklog logger\n\n"
+	printf "\n\nInstalling  the Socklog logger\n"
 	sudo xbps-install -Svy socklog
-	printf "Installing Void Linux config for Socklog \n\n"
+	printf "\n\nInstalling Void Linux config for Socklog\n"
 	sudo xbps-install -Svy socklog-void
-        printf "installing a suite for debugging and profiling programs"
+        printf "\n\nInstalling a suite for debugging and profiling programs\n"
         sudo xbps-install -Svy valgrind
-        printf "installing Radare2, a hex editor, dissambler and debugger"
+        printf "\n\nInstalling Radare2, a hex editor, dissambler and debugger\n"
         sudo xbps-install -Svy radare2
-        printf "Installing ired, Interactice raw editor"
+        printf "\n\nInstalling ired, Interactice raw editor\n"
         sudo xbps-install -Svy ired
-        printf "Installing Cutter, a GUI for Radare2"
+        printf "\n\nInstalling Cutter, a GUI for Radare2\n"
         sudo xbps-install -Svy cutter
-        printf "Installing a collection of tools for use with XBPS"
+        printf "\n\nInstalling a collection of tools for use with XBPS\n"
         sudo xbps-install -Svy xtools
 }
 
@@ -260,7 +260,7 @@ addSymbolicLinks()
 usersAndGroups()
 { 
     #Adding the user to the socklog group
-    sudo usermod -aG $USER socklog
+    sudo usermod -aG socklog $USER
 }
 
 sourceBashrc()

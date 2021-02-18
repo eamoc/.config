@@ -56,3 +56,7 @@ alias src='. ~/.bashrc'
 
 #Open postinstall.sh in vim
 alias pi='cd ~/.config/bash/ && vim postinstall.sh'
+
+#Run postinstall.sh
+alias +pi='sudo bash ~/.config/bash/postinstall.sh'
+

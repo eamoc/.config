@@ -17,3 +17,6 @@ sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 # Reject all other inbound connections
 sudo iptables -A INPUT -j REJECT --reject-with icmp-port-unreachable
 sudo iptables -A FORWARD -j REJECT --reject-with icmp-port-unreachable
+
+printf "Finished applying IPv4 ruleset\n\n"
+

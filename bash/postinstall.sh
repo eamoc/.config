@@ -114,6 +114,12 @@ doPackageInstall()
         sudo xbps-install -Svy cutter
         printf "\n\nInstalling $BOLDa collection of tools for use with XBPS$RESET\n"
         sudo xbps-install -Svy xtools
+        printf "\n\nInstalling $BOLDVLC Media Player$RESET\n"
+        sudo xbps-install -Svy vlc 
+        printf "\n\nInstalling $BOLDffmpeg video and audio converter$RESET\n"
+        sudo xbps-install -Svy ffmpeg 
+        printf "\n\nInstalling $BOLDAudacity audio editor$RESET\n"
+        sudo xbps-install -Svy audacity
 }
 
 createDirectories()
@@ -279,15 +285,15 @@ doSocklogConfig()
 registerGit()
 {
  printf "Registering the git user\n\n"
- git config --global user.email $GIT_AUTHOR_EMAIL
- git config --global user.name  $GIT_AUTHOR_NAME
+ git config --global user.email "eamonncostello@gmail.com"
+ git config --global user.name  "Eamonn Costello"
 }
 
 #Call the functions above...
-doPackageInstall
-createDirectories
-configureHomeEnvironment
-sourceBashrc
+#doPackageInstall
+#createDirectories
+#configureHomeEnvironment
+#sourceBashrc
 registerGit
-doFirewallConfig
+#doFirewallConfig
 #doSocklogConfig

@@ -183,7 +183,7 @@ addSymbolicLinks()
         echo "Created new symbolic link -> .Xresources"
     fi
 
-    if [[ -f $HOME}/.asoundrc ]] ; then
+    if [[ -f $HOME/.asoundrc ]] ; then
         rm $HOME/.asoundrc
         echo "Deleted existing .asoundrc\n\n"
         ln -s $HOME/.config/AUDIO_CONFIG $HOME/.asoundrc
@@ -194,7 +194,7 @@ addSymbolicLinks()
         echo "Created new symbolic link -> .asoundrc"
     fi
 
-    if [[ -f $HOME}/.vimrc ]] ; then
+    if [[ -f $HOME/.vimrc ]] ; then
         rm $HOME/.vimrc
         echo "Deleted existing .vimrc\n\n"
         ln -s $HOME/.config/VIM_RC $HOME/.vimrc

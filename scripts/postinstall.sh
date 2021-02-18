@@ -248,11 +248,11 @@ doFirewallConfig()
     fi
 
     #Apply rulesets to iptables
-    . ~/.config/bash/iptables_ruleset.sh
+    . ~/.config/scripts/iptables_ruleset.sh
     sudo iptables-save | sudo tee /etc/iptables/iptables.rules
     
     #ip6tables
-    . ~/.config/bash/ip6tables_ruleset.sh
+    . ~/.config/scripts/ip6tables_ruleset.sh
     sudo ip6tables-save | sudo tee /etc/iptables/ip6tables.rules
 }
 

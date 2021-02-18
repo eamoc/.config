@@ -1,0 +1,17 @@
+#Environment variables
+export EDITOR=vim
+export TERMINAL=rxvt-unicode
+export GIT_EDITOR=vim
+export GIT_AUTHOR_NAME='Eamonn Costello'
+export GIT_AUTHOR_EMAIL='eamonncostello@gmail.com'
+
+#Path Additions
+#Set PATH so it includes user's private bin if it exists
+if [ -d ~/bin ]; then
+    PATH=$HOME/bin:$PATH
+fi
+
+#Add golang to the path
+if [ -d /usr/local/go/bin ]; then
+    PATH=/usr/local/go/bin:$PATH
+fi

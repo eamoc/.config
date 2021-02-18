@@ -147,7 +147,7 @@ createDirectories()
     fi
 }
 
-addSymbolicLinks()
+configureHomeEnvironment()
 {
 
     if [[ -f $HOME/.bashrc ]] ; then
@@ -208,8 +208,22 @@ addSymbolicLinks()
     if [[ -d /usr/share/X11/xorg.conf.d/ ]] ; then
         sudo ln -s $HOME/.config/IRISH_XORG_LOCALE /usr/share/X11/xorg.conf.d/20-keyboard.conf
     fi
+}
 
-# Adding symbolic links for iptables and ip6tables I.e enabling the services
+usersAndGroups()
+{ 
+    #Adding the user to the socklog group
+}
+
+sourceBashrc()
+{ 
+    echo "Updating .bashrc\n\n"
+    . ~/.bashrc
+}
+
+doFirewallConfig()
+{
+    # Adding symbolic links for iptables and ip6tables I.e enabling the services
 
     if [[ -h /var/service/iptables ]] ; then
         sudo rm /var/service/iptables
@@ -221,7 +235,6 @@ addSymbolicLinks()
         echo "Created new symbolic link -> /var/service/iptables"
     fi
 
-
     if [[ -h /var/service/ip6tables ]] ; then
         sudo rm /var/service/ip6tables
         echo "Deleted existing symlink for ipt6ables\n\n"
@@ -232,7 +245,18 @@ addSymbolicLinks()
         echo "Created new symbolic link -> /var/service/ip6tables"
     fi
 
-# Symbolic links for socklog
+    #Apply rulesets to iptables
+    . ~/.config/bash/iptables_ruleset.sh
+    sudo iptables-save | sudo tee /etc/iptables/iptables.rules
+    
+    #ip6tables
+    . ~/.config/bash/ip6tables_ruleset.sh
+    sudo ip6tables-save | sudo tee /etc/iptables/ip6tables.rules
+}
+
+doSocklogConfig()
+{
+    # Symbolic links for socklog
 
     if [[ -h /var/service/socklog-unix ]] ; then
         sudo rm /var/service/socklog-unix
@@ -244,7 +268,6 @@ addSymbolicLinks()
         echo "Created new symbolic link -> /var/service/socklog-unix"
     fi
 
-
     if [[ -h /var/service/nanoklogd ]] ; then
         sudo rm /var/service/nanoklogd
         echo "Deleted existing symlink for nanoklogd\n\n"
@@ -254,24 +277,14 @@ addSymbolicLinks()
         sudo ln -s /etc/sv/nanoklogd /var/service
         echo "Created new symbolic link -> /var/service/nanoklogd"
     fi
-
-}
-
-usersAndGroups()
-{ 
-    #Adding the user to the socklog group
     sudo usermod -aG socklog $USER
-}
 
-sourceBashrc()
-{ 
-    echo "Updating .bashrc\n\n"
-    . ~/.bashrc
 }
 
 #Call the functions above...
 doPackageInstall
 createDirectories
-addSymbolicLinks
-usersAndGroups
+configureHomeEnvironment
+doFireWallconfig
+#doSocklogConfig
 sourceBashrc

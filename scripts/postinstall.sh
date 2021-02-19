@@ -225,42 +225,34 @@ sourceBashrc()
 
 doFirewallConfig()
 {
-    # Adding symbolic links for iptables and ip6tables I.e enabling the services
-
+    #If the service already exists, delete it
     if [[ -h /var/service/iptables ]] ; then
         sudo rm /var/service/iptables
         printf "Deleted existing symlink for iptables\n\n"
-        sudo ln -s /etc/sv/iptables /var/service 
-        printf "Created new symbolic link -> /var/service/iptables\n\n"
-    else
-        sudo ln -s /etc/sv/iptables /var/service
-        printf "Created new symbolic link -> /var/service/iptables\n\n"
-    fi
-
     if [[ -h /var/service/ip6tables ]] ; then
         sudo rm /var/service/ip6tables
         printf "Deleted existing symlink for ipt6ables\n\n"
-        sudo ln -s /etc/sv/ip6tables /var/service 
-        printf "Created new symbolic link -> /var/service/ip6tables\n\n"
-    else
-        sudo ln -s /etc/sv/ip6tables /var/service
-        printf "Created new symbolic link -> /var/service/ip6tables\n\n"
-    fi
 
     #Apply rulesets to iptables and ip6tables
-#    if [[ -f ~/.config/scripts/iptables_ruleset.sh ]] ; then
- #       . ~/.config/scripts/iptables_ruleset.sh
-  #      sudo iptables-save | sudo tee /etc/iptables/iptables.rules
-   #     print "Finished applying ruleset to iptables\n\n"
-   # else 
-   #     print "ruleset file does not exist\n\n"    
+    if [[ -f ~/.config/scripts/iptables_ruleset.sh ]] ; then
+       sudo sh ~/.config/scripts/iptables_ruleset.sh
+       sudo iptables-save | sudo tee /etc/iptables/iptables.rules
+       print "Finished applying ruleset to iptables\n\n"
+    else 
+       print "Ruleset file does not exist\n\n"    
 
-   # if [[ -f ~/.config/scripts/ip6tables_ruleset.sh ]] ; then
-#        . ~/.config/scripts/iptables_ruleset.sh
-#        sudo ip6tables-save | sudo tee /etc/iptables/ip6tables.rules
-#        print "Finished applying ruleset to ip6tables\n\n"
-#    else 
-#        print "ruleset file does not exist\n\n"    
+    if [[ -f ~/.config/scripts/ip6tables_ruleset.sh ]] ; then
+        sudo sh ~/.config/scripts/ip6tables_ruleset.sh
+        sudo ip6tables-save | sudo tee /etc/iptables/ip6tables.rules
+        print "Finished applying ruleset to ip6tables\n\n"
+    else 
+        print "Ruleset file does not exist\n\n"    
+
+    # Add symbolic links for iptables and ip6tables I.e enable the services
+    sudo ln -s /etc/sv/iptables /var/service 
+    printf "Enabled the iptables service\n\n"
+    sudo ln -s /etc/sv/ip6tables /var/service 
+    printf "Enabled the ip6tables\n\n"
 }
 
 doSocklogConfig()
@@ -297,10 +289,10 @@ registerGit()
 }
 
 #Call the functions above...
-doPackageInstall
-createDirectories
-configureHomeEnvironment
-sourceBashrc
+#doPackageInstall
+#createDirectories
+#configureHomeEnvironment
+#sourceBashrc
 #registerGit
 doFirewallConfig
 #doSocklogConfig

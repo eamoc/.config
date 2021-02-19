@@ -219,7 +219,7 @@ configureHomeEnvironment()
 
 sourceBashrc()
 { 
-    printf "Updating .bashrc\n\n"
+    printf "Reloading .bashrc\n\n"
     . ~/.bashrc
 }
 
@@ -292,4 +292,4 @@ createDirectories
 configureHomeEnvironment
 sourceBashrc
 doFirewallConfig
-#doSocklogConfig
+doSocklogConfig

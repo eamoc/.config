@@ -35,91 +35,91 @@ doPackageInstall()
 {
 	printf "\nDownloading some required packages\n\n"
 	printf "\n\nInstalling the $BOLDXorg server, input drivers and a few additional utilities$RESET\n"
-	sudo xbps-install -Svy xorg-minimal
+	sudo xbps-install -Sy xorg-minimal
 	printf "\n\nInstalling $BOLDBasic font files and font encoding utilites$RESET\n"
-	sudo xbps-install -Svy xorg-fonts	
+	sudo xbps-install -Sy xorg-fonts	
 	printf "\n\nInstalling $BOLDxterm emulator$RESET\n"
-	sudo xbps-install -Svy xterm					
+	sudo xbps-install -Sy xterm					
 	printf "\n\nInstalling $BOLDclock for twm$RESET\n"
-	sudo xbps-install -Svy clock				
+	sudo xbps-install -Sy clock				
 	printf "\n\nInstalling $BOLDbasic window wanager$RESET\n"
-	sudo xbps-install -Svy twm					
+	sudo xbps-install -Sy twm					
 	printf "\n\nInstalling $BOLDTerminal multiplexer$RESET\n"
-	sudo xbps-install -Svy tmux					
+	sudo xbps-install -Sy tmux					
 	printf "\n\nInstalling $BOLDAMD video driver$RESET\n" 
-	sudo xbps-install -Svy xf86-video-amdgpu
+	sudo xbps-install -Sy xf86-video-amdgpu
 	printf "\n\nInstalling $BOLDSource code control versioning system$RESET\n"
-	sudo xbps-install -Svy git				
+	sudo xbps-install -Sy git				
 	printf "\n\nInstalling $BOLDTHE text editor :-)$RESET\n"
-	sudo xbps-install -Svy vim				
+	sudo xbps-install -Sy vim				
 	printf "\n\nInstalling $BOLDlocation db and lookup utilities$RESET\n"
-	sudo xbps-install -Svy mlocate			
+	sudo xbps-install -Sy mlocate			
 	printf "\n\nInstalling $BOLDa simple image viewer$RESET\n"
-	udo xbps-install -Svy feh				
+	udo xbps-install -Sy feh				
 	printf "\n\nInstalling $BOLDa utility for displaying window and font properties in an X server$RESET\n"
-	sudo xbps-install -Svy xprop				
+	sudo xbps-install -Sy xprop				
 	printf "\n\nInstalling $BOLDa utility that sets the size orientation and/or the reflection of the outputs for a screen.$RESET\n"
-	sudo xbps-install -Svy xrandr			
+	sudo xbps-install -Sy xrandr			
 	printf "\n\nInstalling $BOLDa visual front end for arandr$RESET\n"
-	sudo xbps-install -Svy arandr			
+	sudo xbps-install -Sy arandr			
 	printf "\n\nInstalling $BOLDrxvt-unicode terminal editor$RESET\n"
-	sudo xbps-install -Svy rxvt-unicode			
+	sudo xbps-install -Sy rxvt-unicode			
 	printf "\n\nInstalling $BOLDGNU compiler and associated development utilities$RESET\n"
-	sudo xbps-install -Svy base-devel			
+	sudo xbps-install -Sy base-devel			
 	printf "\n\nInstalling $BOLDIRC chat client$RESET\n"
-	sudo xbps-install -Svy irssi					
+	sudo xbps-install -Sy irssi					
 	printf "\n\nInstalling $BOLDGraphic image manipulation program$RESET\n"
-	sudo xbps-install -Svy gimp				
+	sudo xbps-install -Sy gimp				
 	printf "\n\nInstalling $BOLDtext based music player$RESET\n"
-	sudo xbps-install -Svy cmus					
+	sudo xbps-install -Sy cmus					
 	printf "\n\nInstalling $BOLDGUI based bittorrent client$RESET\n"
-	sudo xbps-install -Svy qbittorrent				
+	sudo xbps-install -Sy qbittorrent				
 	printf "\n\nInstalling $BOLDAdvanced Linux Sound Architercture files and utilities$RESET\n"
-	sudo xbps-install -Svy alsa-utils				
+	sudo xbps-install -Sy alsa-utils				
 	printf "\n\nInstalling $BOLDCurl command line downloading tool$RESET\n"
-	sudo xbps-install -Svy curl				
+	sudo xbps-install -Sy curl				
 	printf "\n\nInstalling $BOLDWget. It's similar to Curl$RESET\n" 
-	sudo xbps-install -Svy wget					
+	sudo xbps-install -Sy wget					
 	printf "\n\nInstalling $BOLDdropbox.$RESET\n"
-	sudo xbps-install -Svy dropbox
+	sudo xbps-install -Sy dropbox
 	printf "\n\nInstalling $BOLDPython.$RESET\n"
-	sudo xbps-install -Svy python
+	sudo xbps-install -Sy python
 	printf "\n\nInstalling $BOLDCronie$RESET\n"
-	sudo xbps-install -Svy cronie
+	sudo xbps-install -Sy cronie
 	printf "\n\nInstalling $BOLDOpenBox Desktop Environment$RESET\n"
-	sudo xbps-install -Svy openbox
+	sudo xbps-install -Sy openbox
 	printf "\n\nInstalling $BOLDthe X config merge tool$RESET\n"
-	sudo xbps-install -Svy xrdb
+	sudo xbps-install -Sy xrdb
 	printf "\n\nInstalling $BOLDa utility for modifying keymaps and pointer button mappings in X$RESET\n"
-	sudo xbps-install -Svy xmodmap
+	sudo xbps-install -Sy xmodmap
 	printf "\n\nInstalling $BOLDthe Firefox Web Browser$RESET\n"
-	sudo xbps-install -Svy firefox
+	sudo xbps-install -Sy firefox
 	printf "\n\nInstalling $BOLDa system diagnostics tool$RESET\n"
-	sudo xbps-install -Svy inxi
+	sudo xbps-install -Sy inxi
 	printf "\n\nInstalling $BOLDa tool that restores iptables rules on boot$RESET\n"
-	sudo xbps-install -Svy runit-iptables
+	sudo xbps-install -Sy runit-iptables
 	printf "\n\nInstalling an $BOLDInternet utility suite$RESET\n"
-	sudo xbps-install -Svy inetutils
+	sudo xbps-install -Sy inetutils
 	printf "\n\nInstalling  the $BOLDSocklog logger$RESET\n"
-	sudo xbps-install -Svy socklog
+	sudo xbps-install -Sy socklog
 	printf "\n\nInstalling $BOLDVoid Linux config for Socklog$RESET\n"
-	sudo xbps-install -Svy socklog-void
+	sudo xbps-install -Sy socklog-void
         printf "\n\nInstalling $BOLDa suite for debugging and profiling programs$RESET\n"
-        sudo xbps-install -Svy valgrind
+        sudo xbps-install -Sy valgrind
         printf "\n\nInstalling $BOLDRadare2, a hex editor, dissambler and debugger$RESET\n"
-        sudo xbps-install -Svy radare2
+        sudo xbps-install -Sy radare2
         printf "\n\nInstalling $BOLDired, Interactice raw editor$RESET\n"
-        sudo xbps-install -Svy ired
+        sudo xbps-install -Sy ired
         printf "\n\nInstalling $BOLDCutter, a GUI for Radare2$RESET\n"
-        sudo xbps-install -Svy cutter
+        sudo xbps-install -Sy cutter
         printf "\n\nInstalling $BOLDa collection of tools for use with XBPS$RESET\n"
-        sudo xbps-install -Svy xtools
+        sudo xbps-install -Sy xtools
         printf "\n\nInstalling $BOLDVLC Media Player$RESET\n"
-        sudo xbps-install -Svy vlc 
+        sudo xbps-install -Sy vlc 
         printf "\n\nInstalling $BOLDffmpeg video and audio converter$RESET\n"
-        sudo xbps-install -Svy ffmpeg 
+        sudo xbps-install -Sy ffmpeg 
         printf "\n\nInstalling $BOLDAudacity audio editor$RESET\n"
-        sudo xbps-install -Svy audacity
+        sudo xbps-install -Sy audacity
 }
 
 createDirectories()
@@ -297,10 +297,10 @@ registerGit()
 }
 
 #Call the functions above...
-#doPackageInstall
-#createDirectories
-#configureHomeEnvironment
-#sourceBashrc
+doPackageInstall
+createDirectories
+configureHomeEnvironment
+sourceBashrc
 #registerGit
 doFirewallConfig
 #doSocklogConfig

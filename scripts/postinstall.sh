@@ -293,6 +293,6 @@ doSocklogConfig()
 doPackageInstall
 createDirectories
 configureHomeEnvironment
-sourceBashrc
 doFirewallConfig
 #doSocklogConfig
+sourceBashrc

@@ -289,10 +289,10 @@ registerGit()
 }
 
 #Call the functions above...
-#doPackageInstall
-#createDirectories
-#configureHomeEnvironment
-#sourceBashrc
+doPackageInstall
+createDirectories
+configureHomeEnvironment
+sourceBashrc
 #registerGit
 doFirewallConfig
 #doSocklogConfig

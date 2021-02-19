@@ -58,5 +58,5 @@ alias src='. ~/.bashrc'
 alias pi='cd ~/.config/scripts && vim postinstall.sh'
 
 #Run postinstall.sh
-alias +pi='sudo bash ~/.config/scripts/postinstall.sh'
+alias +pi='bash ~/.config/scripts/postinstall.sh'
 

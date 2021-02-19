@@ -225,34 +225,39 @@ sourceBashrc()
 
 doFirewallConfig()
 {
-    #If the service already exists, delete it
-    if [[ -h /var/service/iptables ]] ; then
-        sudo rm /var/service/iptables
-        printf "Deleted existing symlink for iptables\n\n"
-    if [[ -h /var/service/ip6tables ]] ; then
-        sudo rm /var/service/ip6tables
-        printf "Deleted existing symlink for ipt6ables\n\n"
+    #If the service already exists, disable it
+    if [ -L /var/service/iptables ] ; then
+       sudo rm /var/service/iptables
+       printf "Deleted existing symlink for iptables\n\n"
+    fi
+
+    if [ -L /var/service/ip6tables ] ; then
+       sudo rm /var/service/ip6tables
+       printf "Deleted existing symlink for ipt6ables\n\n"
+    fi
 
     #Apply rulesets to iptables and ip6tables
-    if [[ -f ~/.config/scripts/iptables_ruleset.sh ]] ; then
-       sudo sh ~/.config/scripts/iptables_ruleset.sh
+    if [ -f $HOME/.config/scripts/iptables_ruleset.sh ] ; then
+       sudo sh $HOME/.config/scripts/iptables_ruleset.sh
        sudo iptables-save | sudo tee /etc/iptables/iptables.rules
-       print "Finished applying ruleset to iptables\n\n"
+       printf "Finished applying ruleset to iptables\n\n"
     else 
-       print "Ruleset file does not exist\n\n"    
+       printf "Ruleset file does not exist\n\n"    
+    fi
 
-    if [[ -f ~/.config/scripts/ip6tables_ruleset.sh ]] ; then
-        sudo sh ~/.config/scripts/ip6tables_ruleset.sh
-        sudo ip6tables-save | sudo tee /etc/iptables/ip6tables.rules
-        print "Finished applying ruleset to ip6tables\n\n"
+    if [ -f $HOME/.config/scripts/ip6tables_ruleset.sh ] ; then
+       sudo sh $HOME/.config/scripts/ip6tables_ruleset.sh
+       sudo ip6tables-save | sudo tee /etc/iptables/ip6tables.rules
+       printf "Finished applying ruleset to ip6tables\n\n"
     else 
-        print "Ruleset file does not exist\n\n"    
+       printf "Ruleset file does not exist\n\n"
+    fi
 
     # Add symbolic links for iptables and ip6tables I.e enable the services
     sudo ln -s /etc/sv/iptables /var/service 
     printf "Enabled the iptables service\n\n"
     sudo ln -s /etc/sv/ip6tables /var/service 
-    printf "Enabled the ip6tables\n\n"
+    printf "Enabled the ip6tables service\n\n"
 }
 
 doSocklogConfig()
@@ -281,18 +286,10 @@ doSocklogConfig()
     sudo usermod -aG socklog $USER
 }
 
-registerGit()
-{
- printf "Registering the git user\n\n"
- git config --global user.email "eamonncostello@gmail.com"
- git config --global user.name  "Eamonn Costello"
-}
-
 #Call the functions above...
 doPackageInstall
 createDirectories
 configureHomeEnvironment
 sourceBashrc
-#registerGit
 doFirewallConfig
 #doSocklogConfig

@@ -262,6 +262,9 @@ doFirewallConfig()
 
 doSocklogConfig()
 {
+    
+
+
     # Symbolic links for socklog
 
     if [[ -h /var/service/socklog-unix ]] ; then
@@ -292,4 +295,4 @@ createDirectories
 configureHomeEnvironment
 sourceBashrc
 doFirewallConfig
-doSocklogConfig
+#doSocklogConfig

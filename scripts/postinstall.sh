@@ -220,13 +220,13 @@ configureHomeEnvironment()
 sourceBashrc()
 { 
     printf "Reloading .bashrc\n\n"
-    source $HOME/.bashrc
+    . $HOME/.bashrc
 }
 
 gitGlobalIDSetup()
 {
     #Adding global username and email to git
-    printf "Adding global username and email to git"
+    printf "Adding global username and email to git\n\n"
     git config --global user.name "eamonn costello"
     git config --global user.email "eamonncostello@gmail.com"
 }
@@ -301,5 +301,5 @@ doSocklogConfig()
 #configureHomeEnvironment
 #doFirewallConfig
 #doSocklogConfig
-gitGlobalIDSetup
+#gitGlobalIDSetup
 sourceBashrc

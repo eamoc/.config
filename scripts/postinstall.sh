@@ -225,6 +225,8 @@ sourceBashrc()
 
 gitGlobalIDSetup()
 {
+    #Adding global username and email to git
+    printf "Adding global username and email to git"
     git config --global user.name "eamonn costello"
     git config --global user.email "eamonncostello@gmail.com"
 }
@@ -268,8 +270,6 @@ doFirewallConfig()
 
 doSocklogConfig()
 {
-    
-
 
     # Symbolic links for socklog
 

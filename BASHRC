@@ -5,16 +5,16 @@
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.config/bash/aliases ]; then
-    . ~/.config/bash/aliases
+if [ -f ~/.config/scripts/aliases ]; then
+    . ~/.config/scripts/aliases
 fi
 
-if [ -f ~/.config/bash/config ]; then
-    . ~/.config/bash/config
+if [ -f ~/.config/scripts/config ]; then
+    . ~/.config/scripts/config
 fi
 
-if [ -f ~/.config/bash/env ]; then
-    . ~/.config/bash/env   
+if [ -f ~/.config/scripts/env ]; then
+    . ~/.config/scripts/env   
 fi
 
 # enable programmable completion features (you don't need to enable

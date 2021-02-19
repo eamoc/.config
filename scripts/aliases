@@ -55,7 +55,7 @@ alias udb='sudo updatedb'
 alias src='. ~/.bashrc'
 
 #Open postinstall.sh in vim
-alias pi='cd ~/.config/cripts && vim postinstall.sh'
+alias pi='cd ~/.config/scripts && vim postinstall.sh'
 
 #Run postinstall.sh
 alias +pi='sudo bash ~/.config/scripts/postinstall.sh'

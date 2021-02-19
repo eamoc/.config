@@ -247,13 +247,20 @@ doFirewallConfig()
         printf "Created new symbolic link -> /var/service/ip6tables\n\n"
     fi
 
-    #Apply rulesets to iptables
-    . ~/.config/scripts/iptables_ruleset.sh
-    sudo iptables-save | sudo tee /etc/iptables/iptables.rules
-    
-    #ip6tables
-    . ~/.config/scripts/ip6tables_ruleset.sh
-    sudo ip6tables-save | sudo tee /etc/iptables/ip6tables.rules
+    #Apply rulesets to iptables and ip6tables
+#    if [[ -f ~/.config/scripts/iptables_ruleset.sh ]] ; then
+ #       . ~/.config/scripts/iptables_ruleset.sh
+  #      sudo iptables-save | sudo tee /etc/iptables/iptables.rules
+   #     print "Finished applying ruleset to iptables\n\n"
+   # else 
+   #     print "ruleset file does not exist\n\n"    
+
+   # if [[ -f ~/.config/scripts/ip6tables_ruleset.sh ]] ; then
+#        . ~/.config/scripts/iptables_ruleset.sh
+#        sudo ip6tables-save | sudo tee /etc/iptables/ip6tables.rules
+#        print "Finished applying ruleset to ip6tables\n\n"
+#    else 
+#        print "ruleset file does not exist\n\n"    
 }
 
 doSocklogConfig()

@@ -274,7 +274,11 @@ doFirewallConfig()
 
 doSocklogConfig()
 {
-
+    #Add a log user for logging
+    useradd -M -N -g 99 -u 98 -c 'Unprivileged User' -d /dev/null -s /bin/false log
+    #Give the logged in user access to the socklog group (dont know why I need this)
+    sudo usermod -aG socklog $USER
+   
     # Symbolic links for socklog
 
     if [[ -h /var/service/socklog-unix ]] ; then
@@ -296,15 +300,16 @@ doSocklogConfig()
         sudo ln -s /etc/sv/nanoklogd /var/service
         printf "Created new symbolic link -> /var/service/nanoklogd"
     fi
-    sudo usermod -aG socklog $USER
 }
 
+
+
 #Call the functions above...
-#doPackageInstall
-#createDirectories
-#configureHomeEnvironment
-#doFirewallConfig
-#doSocklogConfig
-#gitGlobalIDSetup
+doPackageInstall
+createDirectories
+configureHomeEnvironment
+doFirewallConfig
+doSocklogConfig
+gitGlobalIDSetup
 sourceBashrc
 

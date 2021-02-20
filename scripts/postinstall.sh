@@ -307,3 +307,5 @@ doSocklogConfig()
 #doSocklogConfig
 #gitGlobalIDSetup
 sourceBashrc
+
+printf "adding some test text"

@@ -120,8 +120,10 @@ doPackageInstall()
         sudo xbps-install -Sy ffmpeg 
         printf "\n\nInstalling $BOLDAudacity audio editor$RESET\n"
         sudo xbps-install -Sy audacity
-        printf "\n\nInstalling $BOLDJSON Processor jq$RESET\n" sudo xbps-install -Sy audacity
+        printf "\n\nInstalling $BOLDJSON Processor jq$RESET\n" 
         sudo xbps-install -Sy jq
+        printf "\n\nInstalling $BOLDXClip and XClipboard$RESET\n" 
+        sudo xbps-install -Sy xclip xclipboard
 }
 
 createDirectories()

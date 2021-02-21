@@ -124,6 +124,8 @@ doPackageInstall()
         sudo xbps-install -Sy jq
         printf "\n\nInstalling $BOLDXClip and XClipboard$RESET\n" 
         sudo xbps-install -Sy xclip xclipboard
+        printf "\n\nInstalling $BOLD$a tool the liasts open filesRESET\n" 
+        sudo xbps-install -Sy lsof
 }
 
 createDirectories()

@@ -61,4 +61,4 @@ alias pi='cd ~/.config/scripts && vim postinstall.sh'
 alias +pi='cd $HOME/.config/scripts && ./postinstall.sh'
 
 #Show the time on the command line
-alias tm='date | awk "{print \$4}"'
+alias t='date | awk "{print \$5}"'

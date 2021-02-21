@@ -34,122 +34,122 @@ fi
 doPackageInstall()
 {
 	printf "\nDownloading some required packages\n\n"
-	printf "\n\nInstalling the $BOLDXorg server, input drivers and a few additional utilities$RESET\n"
+	printf "\n\nInstalling the $FG_ORANGEXorg server, input drivers and a few additional utilities$RESET\n"
 	sudo xbps-install -Sy xorg-minimal
-	printf "\n\nInstalling $BOLDBasic font files and font encoding utilites$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEBasic font files and font encoding utilites$RESET\n"
 	sudo xbps-install -Sy xorg-fonts	
-	printf "\n\nInstalling $BOLDxterm emulator$RESET\n"
+	printf "\n\nInstalling $FG_ORANGExterm emulator$RESET\n"
 	sudo xbps-install -Sy xterm					
-	printf "\n\nInstalling $BOLDclock for twm$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEclock for twm$RESET\n"
 	sudo xbps-install -Sy clock				
-	printf "\n\nInstalling $BOLDbasic window wanager$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEbasic window wanager$RESET\n"
 	sudo xbps-install -Sy twm					
-	printf "\n\nInstalling $BOLDTerminal multiplexer$RESET\n"
+	printf "\n\nInstalling $FG_ORANGETerminal multiplexer$RESET\n"
 	sudo xbps-install -Sy tmux					
-	printf "\n\nInstalling $BOLDAMD video driver$RESET\n" 
+	printf "\n\nInstalling $FG_ORANGEAMD video driver$RESET\n" 
 	sudo xbps-install -Sy xf86-video-amdgpu
-	printf "\n\nInstalling $BOLDSource code control versioning system$RESET\n"
+	printf "\n\nInstalling $FG_ORANGESource code control versioning system$RESET\n"
 	sudo xbps-install -Sy git				
-	printf "\n\nInstalling $BOLDTHE text editor :-)$RESET\n"
+	printf "\n\nInstalling $FG_ORANGETHE text editor :-)$RESET\n"
 	sudo xbps-install -Sy vim				
-	printf "\n\nInstalling $BOLDlocation db and lookup utilities$RESET\n"
+	printf "\n\nInstalling $FG_ORANGElocation db and lookup utilities$RESET\n"
 	sudo xbps-install -Sy mlocate			
-	printf "\n\nInstalling $BOLDa simple image viewer$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEa simple image viewer$RESET\n"
 	udo xbps-install -Sy feh				
-	printf "\n\nInstalling $BOLDa utility for displaying window and font properties in an X server$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEa utility for displaying window and font properties in an X server$RESET\n"
 	sudo xbps-install -Sy xprop				
-	printf "\n\nInstalling $BOLDa utility that sets the size orientation and/or the reflection of the outputs for a screen.$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEa utility that sets the size orientation and/or the reflection of the outputs for a screen.$RESET\n"
 	sudo xbps-install -Sy xrandr			
-	printf "\n\nInstalling $BOLDa visual front end for arandr$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEa visual front end for arandr$RESET\n"
 	sudo xbps-install -Sy arandr			
-	printf "\n\nInstalling $BOLDrxvt-unicode terminal editor$RESET\n"
+	printf "\n\nInstalling $FG_ORANGErxvt-unicode terminal editor$RESET\n"
 	sudo xbps-install -Sy rxvt-unicode			
-	printf "\n\nInstalling $BOLDGNU compiler and associated development utilities$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEGNU compiler and associated development utilities$RESET\n"
 	sudo xbps-install -Sy base-devel			
-	printf "\n\nInstalling $BOLDIRC chat client$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEIRC chat client$RESET\n"
 	sudo xbps-install -Sy irssi					
-	printf "\n\nInstalling $BOLDGraphic image manipulation program$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEGraphic image manipulation program$RESET\n"
 	sudo xbps-install -Sy gimp				
-	printf "\n\nInstalling $BOLDtext based music player$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEtext based music player$RESET\n"
 	sudo xbps-install -Sy cmus					
-	printf "\n\nInstalling $BOLDGUI based bittorrent client$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEGUI based bittorrent client$RESET\n"
 	sudo xbps-install -Sy qbittorrent				
-	printf "\n\nInstalling $BOLDAdvanced Linux Sound Architercture files and utilities$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEAdvanced Linux Sound Architercture files and utilities$RESET\n"
 	sudo xbps-install -Sy alsa-utils				
-	printf "\n\nInstalling $BOLDCurl command line downloading tool$RESET\n"
+	printf "\n\nInstalling $FG_ORANGECurl command line downloading tool$RESET\n"
 	sudo xbps-install -Sy curl				
-	printf "\n\nInstalling $BOLDWget. It's similar to Curl$RESET\n" 
+	printf "\n\nInstalling $FG_ORANGEWget. It's similar to Curl$RESET\n" 
 	sudo xbps-install -Sy wget					
-	printf "\n\nInstalling $BOLDdropbox.$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEdropbox.$RESET\n"
 	sudo xbps-install -Sy dropbox
-	printf "\n\nInstalling $BOLDPython.$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEPython.$RESET\n"
 	sudo xbps-install -Sy python
-	printf "\n\nInstalling $BOLDCronie$RESET\n"
+	printf "\n\nInstalling $FG_ORANGECronie$RESET\n"
 	sudo xbps-install -Sy cronie
-	printf "\n\nInstalling $BOLDOpenBox Desktop Environment$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEOpenBox Desktop Environment$RESET\n"
 	sudo xbps-install -Sy openbox
-	printf "\n\nInstalling $BOLDthe X config merge tool$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEthe X config merge tool$RESET\n"
 	sudo xbps-install -Sy xrdb
-	printf "\n\nInstalling $BOLDa utility for modifying keymaps and pointer button mappings in X$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEa utility for modifying keymaps and pointer button mappings in X$RESET\n"
 	sudo xbps-install -Sy xmodmap
-	printf "\n\nInstalling $BOLDthe Firefox Web Browser$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEthe Firefox Web Browser$RESET\n"
 	sudo xbps-install -Sy firefox
-	printf "\n\nInstalling $BOLDa system diagnostics tool$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEa system diagnostics tool$RESET\n"
 	sudo xbps-install -Sy inxi
-	printf "\n\nInstalling $BOLDa tool that restores iptables rules on boot$RESET\n"
+	printf "\n\nInstalling $FG_ORANGEa tool that restores iptables rules on boot$RESET\n"
 	sudo xbps-install -Sy runit-iptables
-	printf "\n\nInstalling an $BOLDInternet utility suite$RESET\n"
+	printf "\n\nInstalling an $FG_ORANGEInternet utility suite$RESET\n"
 	sudo xbps-install -Sy inetutils
-	printf "\n\nInstalling  the $BOLDSocklog logger$RESET\n"
-	sudo xbps-install -Sy socklog
-	printf "\n\nInstalling $BOLDVoid Linux config for Socklog$RESET\n"
-	sudo xbps-install -Sy socklog-void
-        printf "\n\nInstalling $BOLDa suite for debugging and profiling programs$RESET\n"
+#	printf "\n\nInstalling  the $FG_ORANGESocklog logger$RESET\n"
+#	sudo xbps-install -Sy socklog
+#	printf "\n\nInstalling $FG_ORANGEVoid Linux config for Socklog$RESET\n"
+#	sudo xbps-install -Sy socklog-void
+        printf "\n\nInstalling $FG_ORANGEA suite for debugging and profiling programs$RESET\n"
         sudo xbps-install -Sy valgrind
-        printf "\n\nInstalling $BOLDRadare2, a hex editor, dissambler and debugger$RESET\n"
+        printf "\n\nInstalling $FG_ORANGERadare2, a hex editor, dissambler and debugger$RESET\n"
         sudo xbps-install -Sy radare2
-        printf "\n\nInstalling $BOLDired, Interactice raw editor$RESET\n"
+        printf "\n\nInstalling $FG_ORANGEired, Interactive raw editor$RESET\n"
         sudo xbps-install -Sy ired
-        printf "\n\nInstalling $BOLDCutter, a GUI for Radare2$RESET\n"
+        printf "\n\nInstalling $FG_ORANGECutter, a GUI for Radare2$RESET\n"
         sudo xbps-install -Sy cutter
-        printf "\n\nInstalling $BOLDa collection of tools for use with XBPS$RESET\n"
+        printf "\n\nInstalling $FG_ORANGEa collection of tools for use with XBPS$RESET\n"
         sudo xbps-install -Sy xtools
-        printf "\n\nInstalling $BOLDVLC Media Player$RESET\n"
+        printf "\n\nInstalling $FG_ORANGEVLC Media Player$RESET\n"
         sudo xbps-install -Sy vlc 
-        printf "\n\nInstalling $BOLDffmpeg video and audio converter$RESET\n"
+        printf "\n\nInstalling $FG_ORANGEffmpeg video and audio converter$RESET\n"
         sudo xbps-install -Sy ffmpeg 
-        printf "\n\nInstalling $BOLDAudacity audio editor$RESET\n"
+        printf "\n\nInstalling $FG_ORANGEAudacity audio editor$RESET\n"
         sudo xbps-install -Sy audacity
-        printf "\n\nInstalling $BOLDJSON Processor jq$RESET\n" 
+        printf "\n\nInstalling $FG_ORANGEJSON Processor jq$RESET\n" 
         sudo xbps-install -Sy jq
-        printf "\n\nInstalling $BOLDXClip and XClipboard$RESET\n" 
+        printf "\n\nInstalling $FG_ORANGEXClip and XClipboard$RESET\n" 
         sudo xbps-install -Sy xclip xclipboard
-        printf "\n\nInstalling $BOLD$a tool the liasts open filesRESET\n" 
+        printf "\n\nInstalling $FG_ORANGE$A tool the lists open files$RESET\n" 
         sudo xbps-install -Sy lsof
 }
 
 createDirectories()
 {
     if [[ -d $HOME/tmp ]] ; then
-        printf "The directory $BOLD$HOME/tmp$RESET already exists. Skipping..."
+        printf "The directory $FG_ORANGE$HOME/tmp$RESET already exists. Skipping..."
     else
 	mkdir $HOME/tmp
     fi
 
     if [[ -d $HOME/sCrAtCh ]] ; then
-	printf "The directory $BOLD$HOME/sCrAtCh$RESET already exists. Skipping..."
+	printf "The directory $FG_ORANGE$HOME/sCrAtCh$RESET already exists. Skipping..."
     else
 	mkdir $HOME/sCrAtCh
     fi
 
 #    if [[ -d $HOME/BACKUP ]] ; then
-#	printf "The directory $BOLD$HOME/BACKUP$RESET already exists. Skipping..."
+#	printf "The directory $FG_ORANGE$HOME/BACKUP$RESET already exists. Skipping..."
 #    else
 #	mkdir $HOME/BACKUP
 #    fi
 
     if [[ -d $HOME/void-packages ]] ; then
-	printf "The directory $BOLD$HOME/void-packages$RESET already exists. Skipping..."
+	printf "The directory $FG_ORANGE$HOME/void-packages$RESET already exists. Skipping..."
     else
 	printf "Setting up the source packages Tree...."
 	cd $HOME 
@@ -311,7 +311,7 @@ doPackageInstall
 createDirectories
 configureHomeEnvironment
 doFirewallConfig
-doSocklogConfig
+#doSocklogConfig
 gitGlobalIDSetup
 sourceBashrc
 

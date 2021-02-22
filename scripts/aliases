@@ -48,6 +48,9 @@ alias _q='xbps-query -Rs'
 #Perform a full system upgrade
 alias _u='sudo xbps-install -Suv'
 
+#List manulally installed packages and pipe result to file
+alias _m='xbps-query -m | xargs -n1 xbps-uhelper getpkgname > ~/.config/INSTALLED_PKGS'
+
 #Update the mlocate database
 alias udb='sudo updatedb'
 
@@ -62,3 +65,6 @@ alias +pi='cd $HOME/.config/scripts && ./postinstall.sh'
 
 #Show the time on the command line
 alias t='date | awk "{print \$5}"'
+
+#Show scripts/ directory
+alias s='vim $HOME/.config/scripts/'

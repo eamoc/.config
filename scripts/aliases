@@ -68,3 +68,6 @@ alias t='date | awk "{print \$5}"'
 
 #Show scripts/ directory
 alias s='vim $HOME/.config/scripts/'
+
+#open the pdfviewer
+alias pdf='pdfviewer'

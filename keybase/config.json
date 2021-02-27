@@ -1,0 +1,14 @@
+{
+    "current_user": "eamoc",
+    "mountdir": "/home/eamoc/.config/keybase/kbfs",
+    "mountdirdefault": "/home/eamoc/.config/keybase/kbfs",
+    "users": {
+        "eamoc": {
+            "device": "54b20afa7f22aa76aca09d4569369d18",
+            "id": "f8d7243b555254798bac72568374a419",
+            "name": "eamoc",
+            "passphrase_state": 0,
+            "salt": "112ec56c84a2bf5278cb5173c3d9178c"
+        }
+    }
+}

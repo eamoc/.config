@@ -100,10 +100,6 @@ doPackageInstall()
 	sudo xbps-install -Sy runit-iptables
 	printf "\n\nInstalling an $FG_ORANGEInternet utility suite$RESET\n"
 	sudo xbps-install -Sy inetutils
-#	printf "\n\nInstalling  the $FG_ORANGESocklog logger$RESET\n"
-#	sudo xbps-install -Sy socklog
-#	printf "\n\nInstalling $FG_ORANGEVoid Linux config for Socklog$RESET\n"
-#	sudo xbps-install -Sy socklog-void
         printf "\n\nInstalling $FG_ORANGEA suite for debugging and profiling programs$RESET\n"
         sudo xbps-install -Sy valgrind
         printf "\n\nInstalling $FG_ORANGERadare2, a hex editor, dissambler and debugger$RESET\n"
@@ -126,6 +122,22 @@ doPackageInstall()
         sudo xbps-install -Sy xclip xclipboard
         printf "\n\nInstalling $FG_ORANGE$A tool the lists open files$RESET\n" 
         sudo xbps-install -Sy lsof
+        printf "\n\nInstalling $FG_ORANGE$A terminal browser for the gemini protocol$RESET\n" 
+        sudo xbps-install -Sy amfora
+        printf "\n\nInstalling $FG_ORANGE$A disk encryption utility$RESET\n" 
+        sudo xbps-install -Sy cryptsetup
+        printf "\n\nInstalling $FG_ORANGE$The Keybase filesystem$RESET\n" 
+        sudo xbps-install -Sy kbfs
+        printf "\n\nInstalling $FG_ORANGE$The keybase.io command line client$RESET\n" 
+        sudo xbps-install -Sy keybase
+        printf "\n\nInstalling $FG_ORANGE$Logical Volume Manager 2 utilities$RESET\n" 
+        sudo xbps-install -Sy lvm2
+        printf "\n\nInstalling $FG_ORANGE$Tool for managing/monitoring Linux md device arrays$RESET\n" 
+        sudo xbps-install -Sy mdadm
+        printf "\n\nInstalling $FG_ORANGE$$Command-line tools for building TCP client-server applications$RESET\n" 
+        sudo xbps-install -Sy ucspi
+        printf "\n\nInstalling $FG_ORANGE$Network protocol analyzer$RESET\n" 
+        sudo xbps-install -Sy wireshark
 }
 
 createDirectories()
@@ -276,8 +288,14 @@ doFirewallConfig()
 
 doSocklogConfig()
 {
+    printf "\n\nInstalling  the $FG_ORANGESocklog logger$RESET\n"
+    sudo xbps-install -Sy socklog
+    printf "\n\nInstalling $FG_ORANGEVoid Linux config for Socklog$RESET\n"
+    sudo xbps-install -Sy socklog-void
+
     #Add a log user for logging
-    useradd -M -N -g 99 -u 98 -c 'Unprivileged User' -d /dev/null -s /bin/false log
+#   useradd -M -N -g 99 -u 98 -c 'Unprivileged User' -d /dev/null -s /bin/false log
+    
     #Give the logged in user access to the socklog group (dont know why I need this)
     sudo usermod -aG socklog $USER
    
@@ -307,11 +325,11 @@ doSocklogConfig()
 
 
 #Call the functions above...
+doSocklogConfig
 doPackageInstall
 createDirectories
 configureHomeEnvironment
 doFirewallConfig
-#doSocklogConfig
 gitGlobalIDSetup
 sourceBashrc
 

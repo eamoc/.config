@@ -1,4 +1,5 @@
 alsa-utils
+amfora
 arandr
 audacity
 base-devel
@@ -20,6 +21,8 @@ inxi
 ired
 irssi
 jq
+kbfs
+keybase
 lsof
 lvm2
 mdadm

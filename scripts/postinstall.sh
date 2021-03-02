@@ -30,6 +30,19 @@ else
 	RUL=$(tput rmul)
 fi
 
+
+doPackageInstall_new()
+{
+        input="$HOME/.config/INSTALLED_PKGS"
+        while read -r line
+        do
+             if ! [[ $line =~ "socklog" ]]; then
+                sudo xbps-install -Sy $line
+             fi
+        done < "$input"
+}
+    
+
 #Download some required packages:
 doPackageInstall()
 {
@@ -328,11 +341,11 @@ doSocklogConfig()
 
 
 #Call the functions above...
-doSocklogConfig
-doPackageInstall
-createDirectories
-configureHomeEnvironment
-doFirewallConfig
-gitGlobalIDSetup
-sourceBashrc
-
+#doSocklogConfig
+#doPackageInstall
+#createDirectories
+#configureHomeEnvironment
+#doFirewallConfig
+#gitGlobalIDSetup
+#sourceBashrc
+doPackageInstall_new

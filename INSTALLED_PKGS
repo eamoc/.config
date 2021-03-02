@@ -4,6 +4,7 @@ arandr
 audacity
 base-devel
 base-system
+clib
 cmus
 cronie
 cryptsetup
@@ -27,9 +28,11 @@ lsof
 lvm2
 mdadm
 mlocate
+mtree
 openbox
 python
 qbittorrent
+qpdfview
 radare2
 runit-iptables
 rxvt-unicode

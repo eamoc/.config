@@ -136,8 +136,11 @@ doPackageInstall()
         sudo xbps-install -Sy mdadm
         printf "\n\nInstalling $FG_ORANGE$$Command-line tools for building TCP client-server applications$RESET\n" 
         sudo xbps-install -Sy ucspi
-        printf "\n\nInstalling $FG_ORANGE$Network protocol analyzer$RESET\n" 
+        printf "\n\nInstalling $FG_ORANGENetwork protocol analyzer$RESET\n" 
         sudo xbps-install -Sy wireshark
+        printf "\n\nInstalling $FG_ORANGEC/C++ Package manager$RESET\n" 
+        sudo xbps-install -Sy clib
+
 }
 
 createDirectories()

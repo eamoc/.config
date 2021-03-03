@@ -32,6 +32,10 @@ mdadm
 mlocate
 monit
 mtree
+nerd-fonts
+nerd-fonts-otf
+nerd-fonts-ttf
+noto-fonts-emoji
 openbox
 python
 qbittorrent
@@ -54,11 +58,13 @@ wireshark
 xclip
 xclipboard
 xf86-video-amdgpu
+xlsfonts
 xmodmap
 xorg-fonts
 xorg-minimal
 xprop
 xrandr
 xrdb
+xset
 xterm
 xtools

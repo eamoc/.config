@@ -21,6 +21,7 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias gpom='git push origin master'
 alias grao='git remote add origin'
+alias gig='git status -s | grep '^??' | cut -c4- >> .gitignore'
 
 #clear Screen
 alias c='clear'

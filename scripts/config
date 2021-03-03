@@ -56,21 +56,24 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-     PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\w\[\033[01;34m\]\$(vcprompt)\[\033[00;97m\]\n➜ "
-else
-     PS1='${debian_chroot:+($debian_chroot)}\w(vcprompt)\n➜ '
-fi
-unset color_prompt force_color_prompt
+#if [ "$color_prompt" = yes ]; then
+#     PS1="${debian_chroot:+($debian_chroot)}\033[01;32m\]\w\033[01;34m\]\033[00;97m\]\n➜ "
+#else
+#     PS1='${debian_chroot:+($debian_chroot)}\n➜ '
+#fi
+#unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+#case "$TERM" in
+#xterm*|rxvt*)
+#    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+#    ;;
+#*)
+#    ;;
+#esac
+
+#Start the starship prompt
+eval "$(starship init bash)"
 
 
 # enable color support of ls and also add handy aliases

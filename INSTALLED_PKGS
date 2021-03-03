@@ -17,10 +17,12 @@ gimp
 git
 grub-i386-efi
 grub-x86_64-efi
+htop
 inetutils
 inxi
 ired
 irssi
+jnettop
 jq
 kbfs
 keybase
@@ -28,6 +30,7 @@ lsof
 lvm2
 mdadm
 mlocate
+monit
 mtree
 openbox
 python
@@ -38,6 +41,7 @@ runit-iptables
 rxvt-unicode
 socklog
 socklog-void
+starship
 tmux
 twm
 ucspi-tcp

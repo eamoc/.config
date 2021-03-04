@@ -346,17 +346,23 @@ doCronieConfig()
 
    
     if [[ -h /var/service/cronie ]] ; then
-        sudo rm /var/service/nanoklogd
-        printf "Deleted existing symlink for cronie\n\n"
+        sudo rm /var/service/cronie
+        printf "Deleted existing symlink for cronie\n"
         sudo ln -s /etc/sv/cronie /var/service 
-        printf "Created new symbolic link -> /var/service/cronie"
+        printf "Created new symbolic link -> /var/service/cronie\n"
+
+        #Set up the crontab
+        printf "importing crontab from file"
+        crontab $HOME/.config/CRONTAB
     else
         sudo ln -s /etc/sv/cronie /var/service
-        printf "Created new symbolic link -> /var/service/cronie"
+        printf "Created new symbolic link -> /var/service/cronie\n"
+        
+        #Set up the crontab
+        printf "importing crontab from file\n"
+        crontab $HOME/.config/CRONTAB
     fi
 
-    # Set up the crontab
-    sudo crontab/etc/crontab
 }
 
 doGoLangInstall()
@@ -368,14 +374,14 @@ doGoLangInstall()
 }
 
 #Call the functions above...
-doSocklogConfig
+#doSocklogConfig
 doCronieConfig
-doPackageInstall_new
-createDirectories
-configureHomeEnvironment
-doFirewallConfig
-gitGlobalIDSetup
-sourceBashrc
+#doPackageInstall_new
+#createDirectories
+#configureHomeEnvironment
+#doFirewallConfig
+#gitGlobalIDSetup
+#sourceBashrc
 #doPackageInstall
-doGoLangInstall
+#doGoLangInstall
 

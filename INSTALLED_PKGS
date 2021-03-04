@@ -1,3 +1,4 @@
+Thunar
 alsa-utils
 amfora
 arandr
@@ -10,6 +11,7 @@ cronie
 cryptsetup
 curl
 cutter
+ddgr
 dropbox
 ffmpeg
 firefox
@@ -52,6 +54,7 @@ socklog
 socklog-void
 st
 starship
+thunar-archive-plugin
 tmux
 twm
 ucspi-tcp

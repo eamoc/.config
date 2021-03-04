@@ -57,6 +57,11 @@
 			<command>st</command>
 		</action>
 	</item>
+	<item label="XFCE4 Teminal">
+		<action name="Execute">
+			<command>xfce4-terminal</command>
+		</action>
+	</item>
 </menu>
 <menu id="apps-fileman-menu" label="File Managers">
 	<item label="Thunar">

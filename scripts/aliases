@@ -72,3 +72,7 @@ alias s='vim $HOME/.config/scripts/'
 
 #open the pdfviewer
 alias pdf='pdfviewer'
+
+#openbox config
+alias o='obconf-qt'
+alias k='kickshaw'

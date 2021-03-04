@@ -1,0 +1,21 @@
+#--------------------------------------------------
+# example unix/linux crontab file format:
+#--------------------------------------------------
+# min,hour,dayOfMonth,month,dayOfWeek command
+#
+# field          allowed values
+# -----          --------------
+# minute         0-59
+# hour           0-23
+# day of month   1-31
+# month          1-12 (or names, see below)
+# day of week    0-7 (0 or 7 is Sun, or use names)
+# See man 5 crontab for more info...
+#--------------------------------------------------
+
+# Every 1 hour check all directories that have git repositories and commit / push changes if any
+* * * * * $HOME/.config/scripts/git_repo_check.sh
+# Every 1 hour copy the .vim directory into the .config (A kludge. need to push differences only. I.e. move the .config .git repo into $HOME
+* * * * * cp -Rv $HOME/.vim $HOME/.config/.vim
+# Every 1 day export this crontab
+0 * * * * crontab -l $HOME/CRONTAB

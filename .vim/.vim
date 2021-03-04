@@ -1,0 +1,1 @@
+/home/eamoc/.config/.vim

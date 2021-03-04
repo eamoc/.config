@@ -36,7 +36,7 @@ doPackageInstall_new()
         input="$HOME/.config/INSTALLED_PKGS"
         while read -r line
         do
-             if ! [[ $line =~ "socklog" ]]; then
+             if ! [[ $line =~ "socklog"  || $line =~ "cronie" ]]; then
                 sudo xbps-install -Sy $line
              fi
         done < "$input"
@@ -338,14 +338,44 @@ doSocklogConfig()
     fi
 }
 
+doCronieConfig()
+{
+    
+    printf "\n\nInstalling  the $FG_ORANGEcronie daemon to run specified commands$RESET\n"
+    sudo xbps-install -Sy cronie
 
+   
+    if [[ -h /var/service/cronie ]] ; then
+        sudo rm /var/service/nanoklogd
+        printf "Deleted existing symlink for cronie\n\n"
+        sudo ln -s /etc/sv/cronie /var/service 
+        printf "Created new symbolic link -> /var/service/cronie"
+    else
+        sudo ln -s /etc/sv/cronie /var/service
+        printf "Created new symbolic link -> /var/service/cronie"
+    fi
+
+    # Set up the crontab
+    sudo crontab/etc/crontab
+}
+
+doGoLangInstall()
+{
+        
+    printf "\n\nDownloading and extracting $FG_ORANGEGoLang$RESET\n"
+    
+    wget -c https://golang.org/dl/go1.16.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local/
+}
 
 #Call the functions above...
-#doSocklogConfig
-#doPackageInstall
-#createDirectories
-#configureHomeEnvironment
-#doFirewallConfig
-#gitGlobalIDSetup
-#sourceBashrc
+doSocklogConfig
+doCronieConfig
 doPackageInstall_new
+createDirectories
+configureHomeEnvironment
+doFirewallConfig
+gitGlobalIDSetup
+sourceBashrc
+#doPackageInstall
+doGoLangInstall
+

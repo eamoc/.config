@@ -4,3 +4,4 @@ vlc/vlc-qt-interface.conf
 glib-2.0/settings/keyfile
 bashtop/
 htop/
+openbox/menu.xml~

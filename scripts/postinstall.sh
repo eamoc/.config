@@ -170,12 +170,6 @@ createDirectories()
 	mkdir $HOME/sCrAtCh
     fi
 
-#    if [[ -d $HOME/BACKUP ]] ; then
-#	printf "The directory $FG_ORANGE$HOME/BACKUP$RESET already exists. Skipping..."
-#    else
-#	mkdir $HOME/BACKUP
-#    fi
-
     if [[ -d $HOME/void-packages ]] ; then
 	printf "The directory $FG_ORANGE$HOME/void-packages$RESET already exists. Skipping..."
     else

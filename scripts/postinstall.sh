@@ -31,129 +31,26 @@ else
 fi
 
 
+getEssentials()
+{
+    
+	printf "\nDownloading some required packages\n\n"
+	printf "\n\nInstalling the $FG_ORANGEHTTP based Download tool$RESET\n"
+	sudo xbps-install -Sy wget
+	printf "\n\nInstalling $FG_ORANGEVim Text Editor$RESET\n"
+	sudo xbps-install -Sy vim
+}
+
 doPackageInstall()
 {
         input="$HOME/.config/INSTALLED_PKGS"
         while read -r line
         do
-             if ! [[ $line =~ "socklog"  || $line =~ "cronie" ]]; then
+             if ! [[ $line =~ "socklog"  || $line =~ "cronie" || $line =~ "wget" || $line =~ "git" || $line =~ "vim" ]]; then
                 sudo xbps-install -Sy $line
+                printf "\ninstalling " printf $line 
              fi
         done < "$input"
-}
-    
-
-#Download some required packages:
-doPackageInstall_old()
-{
-	printf "\nDownloading some required packages\n\n"
-	printf "\n\nInstalling the $FG_ORANGEXorg server, input drivers and a few additional utilities$RESET\n"
-	sudo xbps-install -Sy xorg-minimal
-	printf "\n\nInstalling $FG_ORANGEBasic font files and font encoding utilites$RESET\n"
-	sudo xbps-install -Sy xorg-fonts	
-	printf "\n\nInstalling $FG_ORANGExterm emulator$RESET\n"
-	sudo xbps-install -Sy xterm					
-	printf "\n\nInstalling $FG_ORANGEclock for twm$RESET\n"
-	sudo xbps-install -Sy clock				
-	printf "\n\nInstalling $FG_ORANGEbasic window wanager$RESET\n"
-	sudo xbps-install -Sy twm					
-	printf "\n\nInstalling $FG_ORANGETerminal multiplexer$RESET\n"
-	sudo xbps-install -Sy tmux					
-	printf "\n\nInstalling $FG_ORANGEAMD video driver$RESET\n" 
-	sudo xbps-install -Sy xf86-video-amdgpu
-	printf "\n\nInstalling $FG_ORANGESource code control versioning system$RESET\n"
-	sudo xbps-install -Sy git				
-	printf "\n\nInstalling $FG_ORANGETHE text editor :-)$RESET\n"
-	sudo xbps-install -Sy vim				
-	printf "\n\nInstalling $FG_ORANGElocation db and lookup utilities$RESET\n"
-	sudo xbps-install -Sy mlocate			
-	printf "\n\nInstalling $FG_ORANGEa simple image viewer$RESET\n"
-	udo xbps-install -Sy feh				
-	printf "\n\nInstalling $FG_ORANGEa utility for displaying window and font properties in an X server$RESET\n"
-	sudo xbps-install -Sy xprop				
-	printf "\n\nInstalling $FG_ORANGEa utility that sets the size orientation and/or the reflection of the outputs for a screen.$RESET\n"
-	sudo xbps-install -Sy xrandr			
-	printf "\n\nInstalling $FG_ORANGEa visual front end for arandr$RESET\n"
-	sudo xbps-install -Sy arandr			
-	printf "\n\nInstalling $FG_ORANGErxvt-unicode terminal editor$RESET\n"
-	sudo xbps-install -Sy rxvt-unicode			
-	printf "\n\nInstalling $FG_ORANGEGNU compiler and associated development utilities$RESET\n"
-	sudo xbps-install -Sy base-devel			
-	printf "\n\nInstalling $FG_ORANGEIRC chat client$RESET\n"
-	sudo xbps-install -Sy irssi					
-	printf "\n\nInstalling $FG_ORANGEGraphic image manipulation program$RESET\n"
-	sudo xbps-install -Sy gimp				
-	printf "\n\nInstalling $FG_ORANGEtext based music player$RESET\n"
-	sudo xbps-install -Sy cmus					
-	printf "\n\nInstalling $FG_ORANGEGUI based bittorrent client$RESET\n"
-	sudo xbps-install -Sy qbittorrent				
-	printf "\n\nInstalling $FG_ORANGEAdvanced Linux Sound Architercture files and utilities$RESET\n"
-	sudo xbps-install -Sy alsa-utils				
-	printf "\n\nInstalling $FG_ORANGECurl command line downloading tool$RESET\n"
-	sudo xbps-install -Sy curl				
-	printf "\n\nInstalling $FG_ORANGEWget. It's similar to Curl$RESET\n" 
-	sudo xbps-install -Sy wget					
-	printf "\n\nInstalling $FG_ORANGEdropbox.$RESET\n"
-	sudo xbps-install -Sy dropbox
-	printf "\n\nInstalling $FG_ORANGEPython.$RESET\n"
-	sudo xbps-install -Sy python
-	printf "\n\nInstalling $FG_ORANGECronie$RESET\n"
-	sudo xbps-install -Sy cronie
-	printf "\n\nInstalling $FG_ORANGEOpenBox Desktop Environment$RESET\n"
-	sudo xbps-install -Sy openbox
-	printf "\n\nInstalling $FG_ORANGEthe X config merge tool$RESET\n"
-	sudo xbps-install -Sy xrdb
-	printf "\n\nInstalling $FG_ORANGEa utility for modifying keymaps and pointer button mappings in X$RESET\n"
-	sudo xbps-install -Sy xmodmap
-	printf "\n\nInstalling $FG_ORANGEthe Firefox Web Browser$RESET\n"
-	sudo xbps-install -Sy firefox
-	printf "\n\nInstalling $FG_ORANGEa system diagnostics tool$RESET\n"
-	sudo xbps-install -Sy inxi
-	printf "\n\nInstalling $FG_ORANGEa tool that restores iptables rules on boot$RESET\n"
-	sudo xbps-install -Sy runit-iptables
-	printf "\n\nInstalling an $FG_ORANGEInternet utility suite$RESET\n"
-	sudo xbps-install -Sy inetutils
-        printf "\n\nInstalling $FG_ORANGEA suite for debugging and profiling programs$RESET\n"
-        sudo xbps-install -Sy valgrind
-        printf "\n\nInstalling $FG_ORANGERadare2, a hex editor, dissambler and debugger$RESET\n"
-        sudo xbps-install -Sy radare2
-        printf "\n\nInstalling $FG_ORANGEired, Interactive raw editor$RESET\n"
-        sudo xbps-install -Sy ired
-        printf "\n\nInstalling $FG_ORANGECutter, a GUI for Radare2$RESET\n"
-        sudo xbps-install -Sy cutter
-        printf "\n\nInstalling $FG_ORANGEa collection of tools for use with XBPS$RESET\n"
-        sudo xbps-install -Sy xtools
-        printf "\n\nInstalling $FG_ORANGEVLC Media Player$RESET\n"
-        sudo xbps-install -Sy vlc 
-        printf "\n\nInstalling $FG_ORANGEffmpeg video and audio converter$RESET\n"
-        sudo xbps-install -Sy ffmpeg 
-        printf "\n\nInstalling $FG_ORANGEAudacity audio editor$RESET\n"
-        sudo xbps-install -Sy audacity
-        printf "\n\nInstalling $FG_ORANGEJSON Processor jq$RESET\n" 
-        sudo xbps-install -Sy jq
-        printf "\n\nInstalling $FG_ORANGEXClip and XClipboard$RESET\n" 
-        sudo xbps-install -Sy xclip xclipboard
-        printf "\n\nInstalling $FG_ORANGE$A tool the lists open files$RESET\n" 
-        sudo xbps-install -Sy lsof
-        printf "\n\nInstalling $FG_ORANGE$A terminal browser for the gemini protocol$RESET\n" 
-        sudo xbps-install -Sy amfora
-        printf "\n\nInstalling $FG_ORANGE$A disk encryption utility$RESET\n" 
-        sudo xbps-install -Sy cryptsetup
-        printf "\n\nInstalling $FG_ORANGE$The Keybase filesystem$RESET\n" 
-        sudo xbps-install -Sy kbfs
-        printf "\n\nInstalling $FG_ORANGE$The keybase.io command line client$RESET\n" 
-        sudo xbps-install -Sy keybase
-        printf "\n\nInstalling $FG_ORANGE$Logical Volume Manager 2 utilities$RESET\n" 
-        sudo xbps-install -Sy lvm2
-        printf "\n\nInstalling $FG_ORANGE$Tool for managing/monitoring Linux md device arrays$RESET\n" 
-        sudo xbps-install -Sy mdadm
-        printf "\n\nInstalling $FG_ORANGE$$Command-line tools for building TCP client-server applications$RESET\n" 
-        sudo xbps-install -Sy ucspi
-        printf "\n\nInstalling $FG_ORANGENetwork protocol analyzer$RESET\n" 
-        sudo xbps-install -Sy wireshark
-        printf "\n\nInstalling $FG_ORANGEC/C++ Package manager$RESET\n" 
-        sudo xbps-install -Sy clib
-
 }
 
 createDirectories()
@@ -364,18 +261,19 @@ doGoLangInstall()
         
     printf "\n\nDownloading and extracting $FG_ORANGEGoLang$RESET\n"
     
-    wget -c https://golang.org/dl/go1.16.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local/
+    wget -c https://golang.org/dl/go1.16.linux-amd64.tar.gz -4 -O - | sudo tar -xz -C /usr/local/
 }
 
 #Call the functions above...
-doSocklogConfig
-doCronieConfig
-doPackageInstall_new
-createDirectories
-configureHomeEnvironment
-doFirewallConfig
-gitGlobalIDSetup
-sourceBashrc
+#getEssentials
+#doSocklogConfig
+#doCronieConfig
+doPackageInstall
+#createDirectories
+#configureHomeEnvironment
+#doFirewallConfig
+#gitGlobalIDSetup
+#sourceBashrc
 #doPackageInstall_old
-doGoLangInstall
+#doGoLangInstall
 

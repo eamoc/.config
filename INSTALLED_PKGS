@@ -44,6 +44,7 @@ mdadm
 mlocate
 monit
 mtree
+neofetch
 nerd-fonts
 nerd-fonts-otf
 nerd-fonts-ttf
@@ -60,6 +61,7 @@ socklog
 socklog-void
 st
 starship
+testdisk
 thunar-archive-plugin
 tmux
 twm

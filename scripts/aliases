@@ -76,3 +76,9 @@ alias pdf='pdfviewer'
 #openbox config
 alias o='obconf-qt'
 alias k='kickshaw'
+
+#edit this file
+al='vim ~/.config/scripts/aliases
+
+#edit starhip config
+star="vim ~/.config/starship.toml

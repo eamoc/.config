@@ -31,7 +31,7 @@ else
 fi
 
 
-doPackageInstall_new()
+doPackageInstall()
 {
         input="$HOME/.config/INSTALLED_PKGS"
         while read -r line
@@ -44,7 +44,7 @@ doPackageInstall_new()
     
 
 #Download some required packages:
-doPackageInstall()
+doPackageInstall_old()
 {
 	printf "\nDownloading some required packages\n\n"
 	printf "\n\nInstalling the $FG_ORANGEXorg server, input drivers and a few additional utilities$RESET\n"
@@ -368,14 +368,14 @@ doGoLangInstall()
 }
 
 #Call the functions above...
-#doSocklogConfig
+doSocklogConfig
 doCronieConfig
-#doPackageInstall_new
-#createDirectories
-#configureHomeEnvironment
-#doFirewallConfig
-#gitGlobalIDSetup
-#sourceBashrc
-#doPackageInstall
+doPackageInstall_new
+createDirectories
+configureHomeEnvironment
+doFirewallConfig
+gitGlobalIDSetup
+sourceBashrc
+#doPackageInstall_old
 #doGoLangInstall
 

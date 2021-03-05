@@ -1,10 +1,13 @@
 Thunar
 alsa-utils
 amfora
+apparmor
+apparmor-vim
 arandr
 audacity
 base-devel
 base-system
+clamav
 clib
 cmus
 cronie
@@ -12,9 +15,12 @@ cryptsetup
 curl
 cutter
 ddgr
+dmenu
 dropbox
+fail2ban
 ffmpeg
 firefox
+firejail
 font-firacode
 gimp
 git
@@ -67,6 +73,7 @@ wireshark
 xclip
 xclipboard
 xf86-video-amdgpu
+xfce4-terminal
 xlsfonts
 xmodmap
 xorg-fonts

@@ -377,5 +377,5 @@ doFirewallConfig
 gitGlobalIDSetup
 sourceBashrc
 #doPackageInstall_old
-#doGoLangInstall
+doGoLangInstall
 

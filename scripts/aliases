@@ -78,7 +78,7 @@ alias o='obconf-qt'
 alias k='kickshaw'
 
 #edit this file
-al='vim ~/.config/scripts/aliases'
+alias al='vim ~/.config/scripts/aliases'
 
 #edit starhip config
-star='vim ~/.config/starship.toml'
+alias star='vim ~/.config/starship.toml'

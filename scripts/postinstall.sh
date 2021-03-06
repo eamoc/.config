@@ -135,7 +135,18 @@ configureHomeEnvironment()
         ln -s $HOME/.config/VIM_RC $HOME/.vimrc
         printf "Created new symbolic link -> .vimrc\n\n"
     fi
-   
+
+    if [[ -f $HOME/.bash_logout ]] ; then
+        rm $HOME/.bash_logout 
+        printf "Deleted existing .bash_logout \n\n"
+        ln -s $HOME/.config/VIM_RC $HOME/.bash_logout 
+        printf "Created new symbolic link -> .bash_logout \n\n"
+    
+    else
+        ln -s $HOME/.config/VIM_RC $HOME/.bash_logout 
+        printf "Created new symbolic link -> .bash_logout \n\n"
+    fi
+
     if [[ -d /usr/share/X11/xorg.conf.d/ ]] ; then
         printf "Setting up Irish keyboard locale\n"
         sudo ln -s $HOME/.config/IRISH_XORG_LOCALE /usr/share/X11/xorg.conf.d/20-keyboard.conf

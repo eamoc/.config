@@ -265,15 +265,14 @@ doGoLangInstall()
 }
 
 #Call the functions above...
-#getEssentials
-#doSocklogConfig
-#doCronieConfig
+getEssentials
+doSocklogConfig
+doCronieConfig
 doPackageInstall
-#createDirectories
-#configureHomeEnvironment
-#doFirewallConfig
-#gitGlobalIDSetup
-#sourceBashrc
-#doPackageInstall_old
-#doGoLangInstall
+createDirectories
+configureHomeEnvironment
+doFirewallConfig
+gitGlobalIDSetup
+sourceBashrc
+doGoLangInstall
 

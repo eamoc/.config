@@ -1,5 +1,10 @@
 {
     "current_user": "eamoc",
+    "maintenance": {
+        "eamoc": {
+            "bug_3964_repair_time": "1615035650434"
+        }
+    },
     "mountdir": "/home/eamoc/.config/keybase/kbfs",
     "mountdirdefault": "/home/eamoc/.config/keybase/kbfs",
     "users": {

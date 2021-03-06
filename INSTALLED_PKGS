@@ -1,7 +1,6 @@
 Thunar
 alsa-utils
 amfora
-apache
 apparmor
 arandr
 audacity
@@ -29,6 +28,7 @@ glances
 grub-i386-efi
 grub-x86_64-efi
 htop
+hugo
 inetutils
 inkscape
 inxi

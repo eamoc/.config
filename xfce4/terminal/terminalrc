@@ -27,5 +27,5 @@ MiscNewTabAdjacent=FALSE
 MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=FALSE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
-FontName=InconsolataGo Nerd Font 16
+FontName=Fira Code 16
 

@@ -42,3 +42,6 @@ fi
 if [ "$(command -v openbox)" >/dev/null 2>&1 ]; then
 	exec openbox
 fi
+
+eval "$(ssh-agent -s)"
+

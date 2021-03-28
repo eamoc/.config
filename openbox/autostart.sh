@@ -17,4 +17,25 @@
 #xfce-mcs-manager &
 
 #My wallpaper
-eval `cat $HOME/.fehbg` &
+eval "$(cat $HOME/.fehbg)" &
+
+#Set up the Intro space, Monitors Splash etc.
+
+#Set up the Terminals (on Workspace 2)
+
+#Set up the Hugo workspace (on Workspace 3)
+(sleep 3s && xfce4-terminal --geometry 30x20+0+0 --working-directory=$CURRENT_BLOG) &
+#(sleep 3s && xfce4-terminal --working-directory=$CURRENT_BLOG) &
+#(sleep 3s && xfce4-terminal --working-directory=$CURRENT_BLOG) &
+#(sleep 3s && icecat) &
+
+#Launch Discord Client (on Workspace 4)
+#(sleep 3s && Discord) &
+#Launch Telegram (on Workspace 5)
+#(sleep 3s && Telegram) &
+#Launch Firefox (on Workspace 6)
+#(sleep 3s && firefox) &
+#Launch RhythmBox (on Workspace 7)
+#(sleep 3s && rhythmbox) &
+#Launch qBittorrent (on Workspace 8)
+#(sleep 3s && qbittorrent) &

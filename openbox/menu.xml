@@ -30,6 +30,21 @@
 			</startupnotify>
 		</action>
 	</item>
+	<item label="Discord">
+		<action name="Execute">
+			<command>Discord</command>
+			<startupnotify>
+				<enabled>yes</enabled>
+				<name>Discord</name>
+				<wmclass>discord</wmclass>
+			</startupnotify>
+		</action>
+	</item>
+	<item label="Telegram">
+		<action name="Execute">
+			<command>Telegram</command>
+		</action>
+	</item>
 </menu>
 <menu id="apps-multimedia-menu" label="Multimedia">
 	<item label="Rhythmbox">

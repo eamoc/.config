@@ -82,3 +82,11 @@ alias al='vim ~/.config/scripts/aliases'
 
 #edit starhip config
 alias star='vim ~/.config/starship.toml'
+
+#Start hugo test server in draft mode for $CURRENT_BLOG
+alias +hgd='cd ~/blogResources/$CURRENT_BLOG && hugo server -D'
+alias +hg='cd ~/blogResources/$CURRENT_BLOG && hugo server'
+#alias +np= 'hugo new posts/'
+
+#Get Application properties
+alias getprop='obxprop | grep "^_OB_APP"'

@@ -120,13 +120,18 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>4</number>
+    <number>8</number>
     <firstdesk>1</firstdesk>
     <names>
-      <!-- set names up here if you want to, like this:
-    <name>desktop 1</name>
-    <name>desktop 2</name>
-    -->
+      <name>Stats</name>
+      <name>Terminals</name>
+      <name>Hugo</name>
+      <name>Discord</name>
+      <name>Telegram</name>
+      <name>Browser</name>
+      <name>Music</name>
+      <name>Bittorrent</name>
+      <name>Logs</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
@@ -153,10 +158,10 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>0</top>
-    <bottom>0</bottom>
-    <left>0</left>
-    <right>0</right>
+    <top>10</top>
+    <bottom>10</bottom>
+    <left>10</left>
+    <right>10</right>
   </margins>
   <dock>
     <position>TopLeft</position>
@@ -166,7 +171,7 @@
     <noStrut>no</noStrut>
     <stacking>Above</stacking>
     <!-- 'Above', 'Normal', or 'Below' -->
-    <direction>Vertical</direction>
+    <direction>Horizontal</direction>
     <!-- 'Vertical' or 'Horizontal' -->
     <autoHide>no</autoHide>
     <hideDelay>300</hideDelay>
@@ -247,6 +252,26 @@
         <to>4</to>
       </action>
     </keybind>
+    <keybind key="W-F5">
+      <action name="GoToDesktop">
+        <to>5</to>
+      </action>
+    </keybind>
+    <keybind key="W-F6">
+      <action name="GoToDesktop">
+        <to>6</to>
+      </action>
+    </keybind>
+    <keybind key="W-F7">
+      <action name="GoToDesktop">
+        <to>7</to>
+      </action>
+    </keybind>
+    <keybind key="W-F8">
+      <action name="GoToDesktop">
+        <to>8</to>
+      </action>
+    </keybind>
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
@@ -316,13 +341,31 @@
       </action>
     </keybind>
     <!-- Keybindings for running applications -->
-    <keybind key="W-e">
+    <keybind key="W-x">
+      <action name="Logout">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>End OpenBox Session</name>
+        </startupnotify>
+        <command>openbox --exit</command>
+      </action>
+    </keybind>
+    <keybind key="W-t">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>Konqueror</name>
+          <name>XFCE4 Terminal</name>
         </startupnotify>
-        <command>kfmclient openProfile filemanagement</command>
+        <command>xfce4-terminal</command>
+      </action>
+    </keybind>
+    <keybind key="W-b">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>Firefox Browser</name>
+        </startupnotify>
+        <command>firefox</command>
       </action>
     </keybind>
   </keyboard>
@@ -686,186 +729,152 @@
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <applications>
-
-  <application name="Navigator"
-              class="Firefox"
-          groupname="firefox"
-         groupclass="Firefox"
-               role="browser"
-              title="Mozilla Firefox"
-               type="normal">
-  # you may set only one of name/class/role/title/type, or you may use more
-  # than one together to restrict your matches.
-
-  # the name, class, role, and title use simple wildcard matching such as those
-  # used by a shell. you can use * to match any characters and ? to match
-  # any single character.
-
-  # the type is one of: normal, dialog, splash, utility, menu, toolbar, dock,
-  #    or desktop
-
-  # when multiple rules match a window, they will all be applied, in the
-  # order that they appear in this list
-
-
-    # each rule element can be left out or set to 'default' to specify to not 
-    # change that attribute of the window
-
-    <decor>no</decor>
-    # enable or disable window decorations
-
-    <shade>no</shade>
-    # make the window shaded when it appears, or not
-
-    <position force="no">
-      # the position is only used if both an x and y coordinate are provided
-      # (and not set to 'default')
-      # when force is "yes", then the window will be placed here even if it
-      # says you want it placed elsewhere.  this is to override buggy
-      # applications who refuse to behave
-      <x>center</x>
-      # a number like 50, or 'center' to center on screen. use a negative number
-      # to start from the right (or bottom for <y>), ie -50 is 50 pixels from
-      # the right edge (or bottom). use 'default' to specify using value
-      # provided by the application, or chosen by openbox, instead.
-      <y>200</y>
-      <monitor>1</monitor>
-      # specifies the monitor in a xinerama setup.
-      # 1 is the first head, or 'mouse' for wherever the mouse is
-    </position>
-
-    <size>
-      # the size to make the window.
-      <width>20</width>
-      # a number like 20, or 'default' to use the size given by the application.
-      # you can use fractions such as 1/2 or percentages such as 75% in which
-      # case the value is relative to the size of the monitor that the window
-      # appears on.
-      <height>30%</height>
-    </size>
-
-    <focus>yes</focus>
-    # if the window should try be given focus when it appears. if this is set
-    # to yes it doesn't guarantee the window will be given focus. some
-    # restrictions may apply, but Openbox will try to
-
-    <desktop>1</desktop>
-    # 1 is the first desktop, 'all' for all desktops
-
-    <layer>normal</layer>
-    # 'above', 'normal', or 'below'
-
-    <iconic>no</iconic>
-    # make the window iconified when it appears, or not
-
-    <skip_pager>no</skip_pager>
-    # asks to not be shown in pagers
-
-    <skip_taskbar>no</skip_taskbar>
-    # asks to not be shown in taskbars. window cycling actions will also
-    # skip past such windows
-
-    <fullscreen>yes</fullscreen>
-    # make the window in fullscreen mode when it appears
-
-    <maximized>true</maximized>
-    # 'Horizontal', 'Vertical' or boolean (yes/no)
-  </application>
-
-
-    <!--
-  # this is an example with comments through out. use these to make your
-  # own rules, but without the comments of course.
-  # you may use one or more of the name/class/role/title/type rules to specify
-  # windows to match
-
-  <application name="the window's _OB_APP_NAME property (see obxprop)"
-              class="the window's _OB_APP_CLASS property (see obxprop)"
-          groupname="the window's _OB_APP_GROUP_NAME property (see obxprop)"
-         groupclass="the window's _OB_APP_GROUP_CLASS property (see obxprop)"
-               role="the window's _OB_APP_ROLE property (see obxprop)"
-              title="the window's _OB_APP_TITLE property (see obxprop)"
-               type="the window's _OB_APP_TYPE property (see obxprob)..
-                      (if unspecified, then it is 'dialog' for child windows)">
-  # you may set only one of name/class/role/title/type, or you may use more
-  # than one together to restrict your matches.
-
-  # the name, class, role, and title use simple wildcard matching such as those
-  # used by a shell. you can use * to match any characters and ? to match
-  # any single character.
-
-  # the type is one of: normal, dialog, splash, utility, menu, toolbar, dock,
-  #    or desktop
-
-  # when multiple rules match a window, they will all be applied, in the
-  # order that they appear in this list
-
-
-    # each rule element can be left out or set to 'default' to specify to not 
-    # change that attribute of the window
-
-    <decor>yes</decor>
-    # enable or disable window decorations
-
-    <shade>no</shade>
-    # make the window shaded when it appears, or not
-
-    <position force="no">
-      # the position is only used if both an x and y coordinate are provided
-      # (and not set to 'default')
-      # when force is "yes", then the window will be placed here even if it
-      # says you want it placed elsewhere.  this is to override buggy
-      # applications who refuse to behave
-      <x>center</x>
-      # a number like 50, or 'center' to center on screen. use a negative number
-      # to start from the right (or bottom for <y>), ie -50 is 50 pixels from
-      # the right edge (or bottom). use 'default' to specify using value
-      # provided by the application, or chosen by openbox, instead.
-      <y>200</y>
-      <monitor>1</monitor>
-      # specifies the monitor in a xinerama setup.
-      # 1 is the first head, or 'mouse' for wherever the mouse is
-    </position>
-
-    <size>
-      # the size to make the window.
-      <width>20</width>
-      # a number like 20, or 'default' to use the size given by the application.
-      # you can use fractions such as 1/2 or percentages such as 75% in which
-      # case the value is relative to the size of the monitor that the window
-      # appears on.
-      <height>30%</height>
-    </size>
-
-    <focus>yes</focus>
-    # if the window should try be given focus when it appears. if this is set
-    # to yes it doesn't guarantee the window will be given focus. some
-    # restrictions may apply, but Openbox will try to
-
-    <desktop>1</desktop>
-    # 1 is the first desktop, 'all' for all desktops
-
-    <layer>normal</layer>
-    # 'above', 'normal', or 'below'
-
-    <iconic>no</iconic>
-    # make the window iconified when it appears, or not
-
-    <skip_pager>no</skip_pager>
-    # asks to not be shown in pagers
-
-    <skip_taskbar>no</skip_taskbar>
-    # asks to not be shown in taskbars. window cycling actions will also
-    # skip past such windows
-
-    <fullscreen>yes</fullscreen>
-    # make the window in fullscreen mode when it appears
-
-    <maximized>true</maximized>
-    # 'Horizontal', 'Vertical' or boolean (yes/no)
-  </application>
-
-  # end of the example
--->
+    <application name="Navigator" class="IceCat" groupname="icecat" groupclass="Icecat" role="browser" title="GNU IceCat" type="normal">
+      <decor>no</decor>
+      <shade>no</shade>
+      <position force="yes">
+        <x>65%</x>
+        <y>0%</y>
+        <monitor>1</monitor>
+      </position>
+      <size>
+        <width>35%</width>
+        <height>100%</height>
+      </size>
+      <focus>yes</focus>
+      <desktop>3</desktop>
+      <layer>normal</layer>
+      <iconic>no</iconic>
+      <skip_pager>no</skip_pager>
+      <skip_taskbar>no</skip_taskbar>
+      <fullscreen>no</fullscreen>
+      <maximized>no</maximized>
+    </application>
+    <application name="xfce4-terminal" class="Xfce4-terminal" groupname="xfce4-terminal" groupclass="Xfce4-terminal" role="" title="Terminal" type="normal">
+      <decor>no</decor>
+      <shade>no</shade>
+      <position force="no">
+        <x>default</x>
+        <y>default</y>
+        <monitor>1</monitor>
+      </position>
+      <size>
+        <width>35%</width>
+        <height>100%</height>
+      </size>
+      <focus>yes</focus>
+      <desktop>3</desktop>
+      <layer>normal</layer>
+      <iconic>no</iconic>
+      <skip_pager>no</skip_pager>
+      <skip_taskbar>no</skip_taskbar>
+      <fullscreen>no</fullscreen>
+      <maximized>no</maximized>
+    </application>
+    <application name="discord" class="discord" groupname="" groupclass="" role="browser-window" title="Discord" type="normal">
+      <decor>no</decor>
+      <shade>no</shade>
+      <position force="no">
+        <x>center</x>
+        <y>200</y>
+        <monitor>1</monitor>
+      </position>
+      <size>
+        <width>20</width>
+        <height>30%</height>
+      </size>
+      <focus>yes</focus>
+      <desktop>4</desktop>
+      <layer>normal</layer>
+      <iconic>no</iconic>
+      <skip_pager>no</skip_pager>
+      <skip_taskbar>no</skip_taskbar>
+      <fullscreen>yes</fullscreen>
+      <maximized>true</maximized>
+    </application>
+    <application name="Telegram" class="TelegramDesktop" groupname="" groupclass="" role="browser-window" title="Telegram" type="normal">
+      <decor>no</decor>
+      <shade>no</shade>
+      <position force="no">
+        <x>center</x>
+        <y>200</y>
+        <monitor>1</monitor>
+      </position>
+      <size>
+        <width>20</width>
+        <height>30%</height>
+      </size>
+      <focus>yes</focus>
+      <desktop>5</desktop>
+      <layer>normal</layer>
+      <iconic>no</iconic>
+      <skip_pager>no</skip_pager>
+      <skip_taskbar>no</skip_taskbar>
+      <fullscreen>yes</fullscreen>
+      <maximized>true</maximized>
+    </application>
+    <application name="Navigator" class="Firefox" groupname="firefox" groupclass="Firefox" role="browser" title="Mozilla Firefox" type="normal">
+      <decor>no</decor>
+      <shade>no</shade>
+      <position force="no">
+        <x>center</x>
+        <y>200</y>
+        <monitor>1</monitor>
+      </position>
+      <size>
+        <width>20</width>
+        <height>30%</height>
+      </size>
+      <focus>yes</focus>
+      <desktop>6</desktop>
+      <layer>normal</layer>
+      <iconic>no</iconic>
+      <skip_pager>no</skip_pager>
+      <skip_taskbar>no</skip_taskbar>
+      <fullscreen>no</fullscreen>
+      <maximized>true</maximized>
+    </application>
+    <application name="rhythmbox" class="Rhythmbox" groupname="rhythmbox" groupclass="Rhythmbox" role="" title="Rhythmbox" type="normal">
+      <decor>no</decor>
+      <shade>no</shade>
+      <position force="no">
+        <x>center</x>
+        <y>200</y>
+        <monitor>1</monitor>
+      </position>
+      <size>
+        <width>20</width>
+        <height>30%</height>
+      </size>
+      <focus>yes</focus>
+      <desktop>7</desktop>
+      <layer>normal</layer>
+      <iconic>no</iconic>
+      <skip_pager>no</skip_pager>
+      <skip_taskbar>no</skip_taskbar>
+      <fullscreen>yes</fullscreen>
+      <maximized>true</maximized>
+    </application>
+    <application name="qbittorrent" class="qBittorrent" groupname="" groupclass="" role="" title="qBittorrent v4.3.3" type="normal">
+      <decor>no</decor>
+      <shade>no</shade>
+      <position force="no">
+        <x>center</x>
+        <y>200</y>
+        <monitor>1</monitor>
+      </position>
+      <size>
+        <width>20</width>
+        <height>30%</height>
+      </size>
+      <focus>yes</focus>
+      <desktop>8</desktop>
+      <layer>normal</layer>
+      <iconic>no</iconic>
+      <skip_pager>no</skip_pager>
+      <skip_taskbar>no</skip_taskbar>
+      <fullscreen>yes</fullscreen>
+      <maximized>true</maximized>
+    </application>
   </applications>
 </openbox_config>

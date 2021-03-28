@@ -271,9 +271,34 @@ doGoLangInstall()
 {
         
     printf "\n\nDownloading and extracting $FG_ORANGEGoLang$RESET\n"
-    
+   # -4 means connect to ipv4 adresses only.
+   # -O - Means print to standard output
     wget -c https://golang.org/dl/go1.16.linux-amd64.tar.gz -4 -O - | sudo tar -xz -C /usr/local/
 }
+
+doTelegramInstall()
+{
+  
+    printf "\n\nDownloading and extracting $FG_ORANGETelegram$RESET\n"
+    wget -c https://telegram.org/dl/desktop/linux -4 -O - | sudo tar xJ -C /opt
+    sudo ln -sf /opt/Telegram/Telegram /usr/local/bin/telegram-desktop
+}
+
+doDiscordInstall()
+{
+    printf "\n\nDownloading and extracting $FG_ORANGEDiscord$RESET\n"
+    wget -c https://discord.com/api/download?platform=linux&format=tar.gz -4 -O - | sudo tar xJ -C /opt
+    sudo ln -sf /opt/Discord /usr/local/bin/Discord
+}
+
+doSucklessConfig()
+{
+    printf "Downloading sourcecode from suckless.org"
+    git clone git://git.suckless.org/dwm /usr/src/dwm
+    git clone git://git.suckless.org/st /usr/src/st
+    git clone git://git.suckless.org/dmenu /usr/src/dmenu
+}
+
 
 #Call the functions above...
 getEssentials

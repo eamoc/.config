@@ -23,6 +23,7 @@ ffmpeg
 firefox
 firejail
 font-firacode
+gdk-pixbuf-devel
 gimp
 git
 glances
@@ -77,6 +78,7 @@ valgrind
 vim
 vlc
 void-docs-browse
+webkit2gtk-devel
 wget
 wireshark
 xclip

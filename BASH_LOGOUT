@@ -1,4 +1,0 @@
-# ~/.bash_logout
-
-#kill the SSH Agent on logout
-kill $SSH_AGENT_PID

@@ -90,3 +90,6 @@ alias +hg='cd ~/blogResources/$CURRENT_BLOG && hugo server'
 
 #Get Application properties
 alias getprop='obxprop | grep "^_OB_APP"'
+
+#sudo make clean install
+alias smcl='sudo make clean install'

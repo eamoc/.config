@@ -60,6 +60,7 @@ openbox
 python
 qbittorrent
 qpdfview
+ranger
 rhythmbox
 runit-iptables
 rxvt-unicode
@@ -72,6 +73,7 @@ tcpdump
 testdisk
 thunar-archive-plugin
 tmux
+tree
 twm
 ucspi-tcp
 valgrind

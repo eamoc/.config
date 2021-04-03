@@ -26,6 +26,8 @@ alias gig='git status -s | grep '^??' | cut -c4- >> .gitignore'
 #clear Screen
 alias c='clear'
 
+#exit the terminal
+alias e='exit'
 #Shutdown and Reboot the machine
 alias sd='sudo shutdown -h now'
 alias rb='sudo reboot'

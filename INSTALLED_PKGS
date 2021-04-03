@@ -23,8 +23,11 @@ ffmpeg
 firefox
 firejail
 font-firacode
+fool
+gdk-pixbuf-devel
 gimp
 git
+git-extras
 glances
 googler
 grub-i386-efi
@@ -59,6 +62,7 @@ openbox
 python
 qbittorrent
 qpdfview
+ranger
 rhythmbox
 runit-iptables
 rxvt-unicode
@@ -71,12 +75,14 @@ tcpdump
 testdisk
 thunar-archive-plugin
 tmux
+tree
 twm
 ucspi-tcp
 valgrind
 vim
 vlc
 void-docs-browse
+webkit2gtk-devel
 wget
 wireshark
 xclip

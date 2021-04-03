@@ -301,14 +301,14 @@ doSucklessConfig()
 
 
 #Call the functions above...
-getEssentials
-doSocklogConfig
-doCronieConfig
-doPackageInstall
-createDirectories
+#getEssentials
+#doSocklogConfig
+#doCronieConfig
+#doPackageInstall
+#createDirectories
 configureHomeEnvironment
-doFirewallConfig
-gitGlobalIDSetup
-sourceBashrc
-doGoLangInstall
+#doFirewallConfig
+#gitGlobalIDSetup
+#sourceBashrc
+#doGoLangInstall
 

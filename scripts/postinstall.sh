@@ -139,11 +139,11 @@ configureHomeEnvironment()
     if [[ -f $HOME/.bash_logout ]] ; then
         rm $HOME/.bash_logout 
         printf "Deleted existing .bash_logout \n\n"
-        ln -s $HOME/.config/VIM_RC $HOME/.bash_logout 
+        ln -s $HOME/.config/BASH_LOGOUT $HOME/.bash_logout 
         printf "Created new symbolic link -> .bash_logout \n\n"
     
     else
-        ln -s $HOME/.config/VIM_RC $HOME/.bash_logout 
+        ln -s $HOME/.config/BASH_LOGOUT $HOME/.bash_logout 
         printf "Created new symbolic link -> .bash_logout \n\n"
     fi
 
@@ -293,10 +293,10 @@ doDiscordInstall()
 
 doSucklessConfig()
 {
-    printf "Downloading sourcecode from suckless.org"
-    git clone git://git.suckless.org/dwm /usr/src/dwm
-    git clone git://git.suckless.org/st /usr/src/st
-    git clone git://git.suckless.org/dmenu /usr/src/dmenu
+    wget -c  https://dl.suckless.org/dwm/dwm-6.2.tar.gz -4 -O - | tar xJ -C $HOME/.config
+    wget -c  https://dl.suckless.org/surf/surf-2.0.tar.gz -4 -O - | tar xJ -C $HOME/.config
+    wget -c  https://dl.suckless.org/tools/dmenu-5.0.tar.gz -4 -O - | tar xJ -C $HOME/.config
+    wget -c  https://dl.suckless.org/st/st-0.8.4.tar.gz -4 -O - | tar xJ -C $HOME/.config
 }
 
 

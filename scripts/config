@@ -108,3 +108,5 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 	startx
 fi
 
+#Stert neofetch with each instance of Terminal
+neofetch

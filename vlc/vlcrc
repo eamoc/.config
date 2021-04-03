@@ -2724,7 +2724,7 @@ qt-privacy-ask=0
 #alsa-audio-channels=6
 
 # Software gain (float)
-alsa-gain=0.614125
+alsa-gain=0.166375
 
 [afile] # File audio output
 

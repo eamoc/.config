@@ -1,0 +1,11 @@
+
+URxvt.scrollBar: false
+URxvt.foreground: white
+URxvt.background: black
+URxvt*font: Inconsolata Nerd Font:style=Regular:size=12
+URxvt*boldfont: Inconsolata Nerd Font:style=Bold:size=12
+URxvt.font: xft:xxx:style=Regular:size=12
+URxvt.boldFont: xft:xxx:style=Bold:size=12
+URxvt.transparent: true 
+URxvt.shading: 25
+URxvt.letterSpace:-5

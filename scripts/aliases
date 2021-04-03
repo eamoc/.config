@@ -28,14 +28,12 @@ alias dtfls='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' #run git spec
 #clear Screen
 alias c='clear'
 
-<<<<<<< HEAD
 #exit the terminal
 alias e='exit'
-=======
+
 #exit the shell
 alias e='exit'
 
->>>>>>> 8ca811042560b40258951f1071bf44cdbcfc47fd
 #Shutdown and Reboot the machine
 alias sd='sudo shutdown -h now'
 alias rb='sudo reboot'

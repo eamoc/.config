@@ -7,9 +7,16 @@ htop/
 openbox/menu.xml~
 GIMP/*
 gtk-2.0/
-keybase/kb-0000-2b0e94466359efaaad09b5bfe5a59eb8654dd9d1.saltpack
+keybase/*
 GIMP/2.10/pluginrc
 discord/
+<<<<<<< HEAD
 qBittorrent/*
 QtProject.conf
 vlc/*
+=======
+*.o
+dwm-6.2/dwm
+qBittorrent/*
+.cfg
+>>>>>>> 8ca811042560b40258951f1071bf44cdbcfc47fd

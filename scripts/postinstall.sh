@@ -80,13 +80,12 @@ createDirectories()
 
 configureHomeEnvironment()
 {
-
     if [[ -f $HOME/.bashrc ]] ; then
         rm $HOME/.bashrc
         printf "Deleted existing .bashrc\n\n"
         ln -s $HOME/.config/BASHRC $HOME/.bashrc
         printf "Created new symbolic link -> .bashrc\n\n"
-  
+   
     else
         ln -s $HOME/.config/BASHRC $HOME/.bashrc
         printf "Created new symbolic link -> .bashrc\n\n"
@@ -97,7 +96,7 @@ configureHomeEnvironment()
         printf "Deleted existing .xinitrc\n\n"
         ln -s $HOME/.config/XINITRC $HOME/.xinitrc
         printf "Created new symbolic link -> .xinitrc\n\n"
-  
+ 
     else
         ln -s $HOME/.config/XINITRC $HOME/.xinitrc
         printf "Created new symbolic link -> .xinitrc\n\n"
@@ -151,6 +150,21 @@ configureHomeEnvironment()
         printf "Setting up Irish keyboard locale\n"
         sudo ln -s $HOME/.config/IRISH_XORG_LOCALE /usr/share/X11/xorg.conf.d/20-keyboard.conf
     fi
+#    cp -v $HOME/.config/BASHRC $HOME/.bashrc
+#    cp -v $HOME/.config/XINITRC $HOME/.xinitrc
+#    cp -v $HOME/.config/XRESOURCES $HOME/.Xresources
+#    cp -v $HOME/.config/AUDIO_CONFIG $HOME/.asoundrc
+#    cp -v $HOME/.config/VIM_RC $HOME/.vimrc
+#    cp -v $HOME/.config/BASH_LOGOUT $HOME/.bash_logout
+
+
+    sudo cp -v $HOME/.config/IRISH_XORG_LOCALE /usr/share/X11/xorg.conf.d/20-keyboard.conf
+
+#Configure the bare repo
+#    git init --bare $HOME/.cfg
+#    alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'                                          }
+#    dots config --local status.showUntrackedFiles no
+#    echo "alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/~.config/scripts/aliases 
 }
 
 sourceBashrc()
@@ -298,6 +312,17 @@ doSucklessConfig()
     wget -c  https://dl.suckless.org/tools/dmenu-5.0.tar.gz -4 -O - | tar xJ -C $HOME/.config
     wget -c  https://dl.suckless.org/st/st-0.8.4.tar.gz -4 -O - | tar xJ -C $HOME/.config
 }
+
+configureBareRepo()
+{
+    git init --bare $HOME/.cfg
+    alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+    dots config --local status.showUntrackedFiles no
+    echo "alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/~.config/scripts/aliases
+}
+
+installOpenFrameworks()
+{
 
 
 #Call the functions above...

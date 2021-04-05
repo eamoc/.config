@@ -20,7 +20,7 @@ alias gcm='git commit -m'
 alias grm='git rm'
 alias gb='git branch'
 alias gba='git branch -a'
-alias gpom='git push origin master'
+alias gpom='git push origin main'
 alias grao='git remote add origin'
 alias gig='git status -s | grep '^??' | cut -c4- >> .gitignore' #Ignore any untracked files
 alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' #run git specifying the dotfiles repo and working directory
@@ -100,4 +100,4 @@ alias +hg='cd ~/blogResources/$CURRENT_BLOG && hugo server'
 #alias getprop='obxprop | grep "^_OB_APP"'
 
 #sudo make clean install
-alias smcl='sudo make clean install'
+alias smci='sudo make clean install'

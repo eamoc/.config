@@ -256,7 +256,6 @@ doSocklogConfig()
 
 doCronieConfig()
 {
-    
     printf "\n\nInstalling  the $FG_ORANGEcronie daemon to run specified commands$RESET\n"
     sudo xbps-install -Sy cronie
 
@@ -278,12 +277,10 @@ doCronieConfig()
         printf "importing crontab from file\n"
         crontab $HOME/.config/CRONTAB
     fi
-
 }
 
 doGoLangInstall()
 {
-        
     printf "\n\nDownloading and extracting $FG_ORANGEGoLang$RESET\n"
    # -4 means connect to ipv4 adresses only.
    # -O - Means print to standard output
@@ -292,7 +289,6 @@ doGoLangInstall()
 
 doTelegramInstall()
 {
-  
     printf "\n\nDownloading and extracting $FG_ORANGETelegram$RESET\n"
     wget -c https://telegram.org/dl/desktop/linux -4 -O - | sudo tar xJ -C /opt
     sudo ln -sf /opt/Telegram/Telegram /usr/local/bin/telegram-desktop
@@ -305,12 +301,12 @@ doDiscordInstall()
     sudo ln -sf /opt/Discord /usr/local/bin/Discord
 }
 
-doSucklessConfig()
+installSuckless()
 {
-    wget -c  https://dl.suckless.org/dwm/dwm-6.2.tar.gz -4 -O - | tar xJ -C $HOME/.config
-    wget -c  https://dl.suckless.org/surf/surf-2.0.tar.gz -4 -O - | tar xJ -C $HOME/.config
-    wget -c  https://dl.suckless.org/tools/dmenu-5.0.tar.gz -4 -O - | tar xJ -C $HOME/.config
-    wget -c  https://dl.suckless.org/st/st-0.8.4.tar.gz -4 -O - | tar xJ -C $HOME/.config
+    wget -c  https://dl.suckless.org/dwm/dwm-6.2.tar.gz -4 -O - | tar -xzvf -C $HOME
+    wget -c  https://dl.suckless.org/surf/surf-2.0.tar.gz -4 -O - | tar -xzvf -C $HOME
+    wget -c  https://dl.suckless.org/tools/dmenu-5.0.tar.gz -4 -O - | tar -xzvf -C $HOME
+    wget -c  https://dl.suckless.org/st/st-0.8.4.tar.gz -4 -O - | tar -xzvf -C $HOME
 }
 
 configureBareRepo()
@@ -324,6 +320,10 @@ configureBareRepo()
 installOpenFrameworks()
 {
 
+    sudo wget -c https://openframeworks.cc/versions/v0.11.2/of_v0.11.2_linux64gcc6_release.tar.gz -4 -O - | tar xJ -C /usr/local/
+    mv /usr/local/of_v0.11.2_linux64gcc6_release.tar.gz /usr/local/OF
+
+}
 
 #Call the functions above...
 #getEssentials
@@ -331,9 +331,10 @@ installOpenFrameworks()
 #doCronieConfig
 #doPackageInstall
 #createDirectories
-configureHomeEnvironment
+#configureHomeEnvironment
 #doFirewallConfig
 #gitGlobalIDSetup
 #sourceBashrc
 #doGoLangInstall
-
+#installOpenFrameworks
+installSuckless

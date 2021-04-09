@@ -99,5 +99,8 @@ alias +hg='cd ~/blogResources/$CURRENT_BLOG && hugo server'
 #Get Application properties
 #alias getprop='obxprop | grep "^_OB_APP"'
 
+#edit the dmm config
+alias £dwm='vim ~/dwm-6.2/config.h'
+
 #sudo make clean install
 alias smci='sudo make clean install'

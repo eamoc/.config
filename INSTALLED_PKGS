@@ -48,6 +48,7 @@ gtest
 handbrake
 htop
 hugo
+icecat
 inetutils
 inkscape
 inxi
@@ -79,6 +80,7 @@ noto-fonts-emoji
 obconf-qt
 openbox
 opencv4
+otter-browser
 poco
 pugixml
 python
@@ -92,6 +94,7 @@ runit-iptables
 rxvt-unicode
 socklog
 socklog-void
+speedtest-cli
 squid
 starship
 surf
@@ -126,6 +129,7 @@ xorg-fonts
 xorg-minimal
 xrdb
 xset
+xsetroot
 xterm
 xtools
 zabbix

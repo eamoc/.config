@@ -9,7 +9,8 @@ alias l='ls -CF'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 #Git aliases
-alias cst='cd ~/.config && git status' #check git status of .config directory
+alias cst='cd $HOME/.config && git status' #check git status of .config directory
+alias dst='cd $HOME/.dwm && git status' #check status of .dwm directory
 alias gst='git status'
 alias gl='git pull'
 alias gp='git push'
@@ -20,7 +21,7 @@ alias gcm='git commit -m'
 alias grm='git rm'
 alias gb='git branch'
 alias gba='git branch -a'
-alias gpom='git push origin main'
+alias gpom='git push -u origin main'
 alias grao='git remote add origin'
 alias gig='git status -s | grep '^??' | cut -c4- >> .gitignore' #Ignore any untracked files
 alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' #run git specifying the dotfiles repo and working directory
@@ -100,7 +101,10 @@ alias +hg='cd ~/blogResources/$CURRENT_BLOG && hugo server'
 #alias getprop='obxprop | grep "^_OB_APP"'
 
 #edit the dmm config
-alias £dwm='vim ~/dwm-6.2/config.h'
+alias £dwm='vim ~/dwm-6.2/config.def.h'
 
-#sudo make clean install
-alias smci='sudo make clean install'
+#sudo make clean install in dwm directory
+alias £bld='cd $HOME/dwm-6.2 && rm -f config.h && sudo make clean install'
+
+#speedtest
+alias spd='speedtest-cli'

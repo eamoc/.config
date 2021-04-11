@@ -17,4 +17,6 @@ error_symbol = "[➜](#9e4612)"
 [package]
 disabled = true
 
-
+[directory]
+truncation_length = 100
+truncate_to_repo = false

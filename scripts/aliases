@@ -9,6 +9,7 @@ alias l='ls -CF'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 #Git aliases
+alias git='hub'
 alias cst='cd $HOME/.config && git status' #check git status of .config directory
 alias dst='cd $HOME/.dwm && git status' #check status of .dwm directory
 alias gst='git status'
@@ -18,9 +19,11 @@ alias gd='git diff | nano'
 alias gcv='git commit -v'
 alias gca='git commit -v -a'
 alias gcm='git commit -m'
+alias gco='git checkout'
 alias grm='git rm'
 alias gb='git branch'
 alias gba='git branch -a'
+alias gpo='git push -u origin'
 alias gpom='git push -u origin main'
 alias grao='git remote add origin'
 alias gig='git status -s | grep '^??' | cut -c4- >> .gitignore' #Ignore any untracked files

@@ -47,6 +47,7 @@ gstreamer1-devel
 gtest
 handbrake
 htop
+hub
 hugo
 icecat
 inetutils
@@ -96,6 +97,7 @@ socklog
 socklog-void
 speedtest-cli
 squid
+st-terminfo
 starship
 surf
 sysbench

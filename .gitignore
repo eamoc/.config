@@ -22,3 +22,5 @@ qBittorrent/*
 >>>>>>> 8ca811042560b40258951f1071bf44cdbcfc47fd
 autostart/dropbox.desktop
 otter/
+scripts/.gitignore
+scripts/tags

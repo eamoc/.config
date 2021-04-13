@@ -33,7 +33,6 @@ fi
 
 getEssentials()
 {
-    
 	printf "\nDownloading some required packages\n\n"
 	printf "\n\nInstalling the $FG_ORANGEHTTP based Download tool$RESET\n"
 	sudo xbps-install -Sy wget

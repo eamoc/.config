@@ -35,9 +35,6 @@ alias c='clear'
 #exit the terminal
 alias e='exit'
 
-#exit the shell
-alias e='exit'
-
 #Shutdown and Reboot the machine
 alias sd='sudo shutdown -h now'
 alias rb='sudo reboot'
@@ -46,9 +43,6 @@ alias rb='sudo reboot'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-
-#Redo last command as sudo
-
 
 #Install and remove
 alias _i='sudo xbps-install -Su'
@@ -92,6 +86,9 @@ alias pdf='pdfviewer'
 #edit this file
 alias al='vim ~/.config/scripts/aliases'
 
+#edit the 'env' file
+alias en='vim ~/.config/scripts/env'
+
 #edit starhip config
 alias star='vim ~/.config/starship.toml'
 
@@ -111,3 +108,8 @@ alias £bld='cd $HOME/dwm-6.2 && rm -f config.h && sudo make clean install'
 
 #speedtest
 alias spd='speedtest-cli'
+
+#vim shortcuts
+alias v='vim'
+alias vrc='vim $HOME/.vimrc'
+alias vpl='vim $HOME/.vim/plugins.vim'

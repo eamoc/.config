@@ -1,3 +1,4 @@
+QMPlay2
 Thunar
 alsa-utils
 alure
@@ -15,6 +16,7 @@ cmus
 cointop
 cronie
 cryptsetup
+ctags
 curl
 cutter
 ddgr

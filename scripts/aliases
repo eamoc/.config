@@ -106,7 +106,7 @@ alias £st='vim ~/st/config.def.h'
 
 #sudo make clean install in dwm directory
 alias £+dwm='cd $HOME/dwm && rm -f config.h && sudo make clean install'
-alias £+st='cd $HOME/st && rm -f config.h && sudo make clean install
+alias £+st='cd $HOME/st && rm -f config.h && sudo make clean install'
 
 #speedtest
 alias spd='speedtest-cli'

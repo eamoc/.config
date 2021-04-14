@@ -318,10 +318,14 @@ configureBareRepo()
 
 installOpenFrameworks()
 {
-
     sudo wget -c https://openframeworks.cc/versions/v0.11.2/of_v0.11.2_linux64gcc6_release.tar.gz -4 -O - | tar xJ -C /usr/local/
     mv /usr/local/of_v0.11.2_linux64gcc6_release.tar.gz /usr/local/OF
 
+}
+
+installPowerLinefonts()
+{
+	sudo git clone https://github.com/powerline/fonts.git	
 }
 
 #Call the functions above...
@@ -336,4 +340,4 @@ installOpenFrameworks()
 #sourceBashrc
 #doGoLangInstall
 #installOpenFrameworks
-installSuckless
+#installSuckless

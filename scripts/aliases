@@ -101,12 +101,12 @@ alias +hg='cd ~/blogResources/$CURRENT_BLOG && hugo server'
 #alias getprop='obxprop | grep "^_OB_APP"'
 
 #edit the dmm config
-alias £dwm='vim ~/dwm/config.def.h'
-alias £st='vim ~/st/config.def.h'
+alias £dwm='vim $HOME/.dwm/dwm/config.def.h'
+alias £st='vim $HOME/.dwm/st/config.def.h'
 
 #sudo make clean install in dwm directory
-alias £+dwm='cd $HOME/dwm && rm -f config.h && sudo make clean install'
-alias £+st='cd $HOME/st && rm -f config.h && sudo make clean install'
+alias £+dwm='cd $HOME/.dwm/dwm && rm -f config.h && sudo make clean install'
+alias £+st='cd $HOME/.dwm/st && rm -f config.h && sudo make clean install'
 
 #speedtest
 alias spd='speedtest-cli'

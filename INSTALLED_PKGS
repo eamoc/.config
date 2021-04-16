@@ -79,6 +79,7 @@ monit
 mtree
 neofetch
 nerd-fonts
+nodejs
 noto-fonts-emoji
 obconf-qt
 openbox
@@ -137,4 +138,5 @@ xset
 xsetroot
 xterm
 xtools
+yarn
 zabbix

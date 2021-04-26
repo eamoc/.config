@@ -1,0 +1,36 @@
+AG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+AG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+AG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+AG_OUTPUT_FILESEP	slash	/slash or backslash/
+AG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+AG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+AG_PROC_CWD	/home/eamoc/.config/scripts/	//
+AG_PROGRAM_AUTHOR	Universal Ctags Team	//
+AG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+AG_PROGRAM_URL	https://ctags.io/	/official site/
+AG_PROGRAM_VERSION	5.9.0	//
+_env	old_dotman.sh	/^add_env()$/;"	f
+neRepo	old_dotman.sh	/^cloneRepo()$/;"	f
+figureBareRepo	postinstall.sh	/^configureBareRepo()$/;"	f
+figureHomeEnvironment	postinstall.sh	/^configureHomeEnvironment()$/;"	f
+ateDirectories	postinstall.sh	/^createDirectories()$/;"	f
+f_check	old_dotman.sh	/^diff_check()$/;"	f
+ronieConfig	postinstall.sh	/^doCronieConfig()$/;"	f
+iscordInstall	postinstall.sh	/^doDiscordInstall()$/;"	f
+irewallConfig	postinstall.sh	/^doFirewallConfig()$/;"	f
+oLangInstall	postinstall.sh	/^doGoLangInstall()$/;"	f
+ackageInstall	postinstall.sh	/^doPackageInstall()$/;"	f
+ocklogConfig	postinstall.sh	/^doSocklogConfig()$/;"	f
+elegramInstall	postinstall.sh	/^doTelegramInstall()$/;"	f
+s	postinstall.sh	/^    alias dots='\/usr\/bin\/git --git-dir=$HOME\/.cfg\/ --work-tree=$HOME'$/;"	a
+d_dotfiles	old_dotman.sh	/^find_dotfiles()$/;"	f
+Essentials	postinstall.sh	/^getEssentials()$/;"	f
+GlobalIDSetup	postinstall.sh	/^gitGlobalIDSetup()$/;"	f
+dbye	old_dotman.sh	/^goodbye()$/;"	f
+t_dotFileCheck	old_dotman.sh	/^init_dotFileCheck()$/;"	f
+tialSetup	old_dotman.sh	/^initialSetup()$/;"	f
+tallOpenFrameworks	postinstall.sh	/^installOpenFrameworks()$/;"	f
+tallSuckless	postinstall.sh	/^installSuckless()$/;"	f
+age	old_dotman.sh	/^manage()$/;"	f
+w_diff_check	old_dotman.sh	/^show_diff_check()$/;"	f
+rceBashrc	postinstall.sh	/^sourceBashrc()$/;"	f

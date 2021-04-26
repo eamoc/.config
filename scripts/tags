@@ -1,0 +1,36 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/eamoc/.config/scripts/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+add_env	old_dotman.sh	/^add_env()$/;"	f
+cloneRepo	old_dotman.sh	/^cloneRepo()$/;"	f
+configureBareRepo	postinstall.sh	/^configureBareRepo()$/;"	f
+configureHomeEnvironment	postinstall.sh	/^configureHomeEnvironment()$/;"	f
+createDirectories	postinstall.sh	/^createDirectories()$/;"	f
+diff_check	old_dotman.sh	/^diff_check()$/;"	f
+doCronieConfig	postinstall.sh	/^doCronieConfig()$/;"	f
+doDiscordInstall	postinstall.sh	/^doDiscordInstall()$/;"	f
+doFirewallConfig	postinstall.sh	/^doFirewallConfig()$/;"	f
+doGoLangInstall	postinstall.sh	/^doGoLangInstall()$/;"	f
+doPackageInstall	postinstall.sh	/^doPackageInstall()$/;"	f
+doSocklogConfig	postinstall.sh	/^doSocklogConfig()$/;"	f
+doTelegramInstall	postinstall.sh	/^doTelegramInstall()$/;"	f
+dots	postinstall.sh	/^    alias dots='\/usr\/bin\/git --git-dir=$HOME\/.cfg\/ --work-tree=$HOME'$/;"	a
+find_dotfiles	old_dotman.sh	/^find_dotfiles()$/;"	f
+getEssentials	postinstall.sh	/^getEssentials()$/;"	f
+gitGlobalIDSetup	postinstall.sh	/^gitGlobalIDSetup()$/;"	f
+goodbye	old_dotman.sh	/^goodbye()$/;"	f
+init_dotFileCheck	old_dotman.sh	/^init_dotFileCheck()$/;"	f
+initialSetup	old_dotman.sh	/^initialSetup()$/;"	f
+installOpenFrameworks	postinstall.sh	/^installOpenFrameworks()$/;"	f
+installSuckless	postinstall.sh	/^installSuckless()$/;"	f
+manage	old_dotman.sh	/^manage()$/;"	f
+show_diff_check	old_dotman.sh	/^show_diff_check()$/;"	f
+sourceBashrc	postinstall.sh	/^sourceBashrc()$/;"	f

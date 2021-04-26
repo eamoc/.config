@@ -1,0 +1,86 @@
+{
+	"currentIndex": 1,
+	"title": "",
+	"windows": [
+		{
+			"currentIndex": 1,
+			"geometry": "AdnQywADAAAAAAV/AAAAFAAACf4AAAWeAAAAAAAAAAAAAAJ/AAAB3wAAAAACAAAACgAAAAWAAAAAFQAACf0AAAWd",
+			"toolBars": [
+				{
+					"fullScreenVisibility": "hidden",
+					"identifier": "MenuBar",
+					"normalVisibility": "visible"
+				},
+				{
+					"fullScreenVisibility": "hidden",
+					"identifier": "AddressBar",
+					"normalVisibility": "visible"
+				},
+				{
+					"fullScreenVisibility": "visible",
+					"identifier": "ProgressBar",
+					"normalVisibility": "visible"
+				},
+				{
+					"fullScreenVisibility": "hidden",
+					"identifier": "StatusBar",
+					"normalVisibility": "visible"
+				},
+				{
+					"fullScreenVisibility": "hidden",
+					"identifier": "SideBar",
+					"location": "left",
+					"normalVisibility": "hidden",
+					"row": 0
+				},
+				{
+					"fullScreenVisibility": "visible",
+					"identifier": "TabBar",
+					"location": "top",
+					"normalVisibility": "visible",
+					"row": 0
+				},
+				{
+					"fullScreenVisibility": "hidden",
+					"identifier": "BookmarksBar",
+					"location": "top",
+					"normalVisibility": "hidden",
+					"row": 1
+				},
+				{
+					"fullScreenVisibility": "hidden",
+					"identifier": "ErrorConsoleBar",
+					"location": "bottom",
+					"normalVisibility": "hidden",
+					"row": 0
+				}
+			],
+			"windows": [
+				{
+					"currentIndex": 3,
+					"history": [
+						{
+							"title": "",
+							"url": "about:start",
+							"zoom": 100
+						},
+						{
+							"title": "Before you continue to YouTube",
+							"url": "https://consent.youtube.com/m?continue=https%3A%2F%2Fwww.youtube.com%2F&gl=IE&m=0&pc=yt&uxe=23983172&hl=en&src=1",
+							"zoom": 100
+						},
+						{
+							"title": "Error",
+							"url": "https://consent.google.com/s?continue=https://www.youtube.com/&v=cb.20210406-12-p0.en%2BFX%2B591&gl=IE&hl=en&x=6&pc=yt&uxe=23983172&src=1&t=ADw3F8iQSuqsmNV45qjmbhZkWMJTddAbCA:1617993648413&rl=2&ca=r",
+							"zoom": 100
+						}
+					],
+					"options": {
+						"Search/DefaultSearchEngine": "duckduckgo"
+					},
+					"state": "maximized"
+				}
+			]
+		}
+	]
+}

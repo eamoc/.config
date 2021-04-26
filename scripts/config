@@ -72,6 +72,13 @@ fi
 #    ;;
 #esac
 
+
+export PROMPT_COMMAND="history -a; history -n"
+# history -a appends new history lines to history file.
+# history -n tells bash to read lines that is not read from history file to current history list of session.
+# PROMPT_COMMAND: contents of this variable is run as regular command before bash show prompt. 
+# So every time after you execute a command, history -a; history -n is executed, and your bash history is synced.
+
 #Start the starship prompt
 eval "$(starship init bash)"
 

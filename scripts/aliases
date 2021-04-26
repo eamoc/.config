@@ -2,7 +2,6 @@
 alias ls='ls --color=auto'
 alias ll='ls -alFh'
 alias la='ls -A'
-alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -10,8 +9,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 #Git aliases
 alias git='hub'
-alias cst='cd $HOME/.config && git status' #check git status of .config directory
-alias dst='cd $HOME/.dwm && git status' #check status of .dwm directory
+alias cst='cd $HOME/.config && git status' 									# Check git status of .config directory
+alias dst='cd $HOME/.dwm && git status' 									# Check status of .dwm directory
 alias gst='git status'
 alias gl='git pull'
 alias gp='git push'
@@ -20,14 +19,16 @@ alias gcv='git commit -v'
 alias gca='git commit -v -a'
 alias gcm='git commit -m'
 alias gco='git checkout'
+alias gcb='git checkout -b'											# Checkout to a new branch
 alias grm='git rm'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gpo='git push -u origin'
 alias gpom='git push -u origin main'
 alias grao='git remote add origin'
-alias gig='git status -s | grep '^??' | cut -c4- >> .gitignore' #Ignore any untracked files
-alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' #run git specifying the dotfiles repo and working directory
+alias gig='git status -s | grep '^??' | cut -c4- >> .gitignore' 						# Ignore any untracked files
+alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' 						# Run git specifying the dotfiles repo and working directory
+alias gl1='git log --oneline'
 
 #clear Screen
 alias c='clear'
@@ -35,6 +36,8 @@ alias c='clear'
 #exit the terminal
 alias e='exit'
 
+#ranger
+alias r='ranger'
 #Shutdown and Reboot the machine
 alias sd='sudo shutdown -h now'
 alias rb='sudo reboot'
@@ -49,7 +52,7 @@ alias _i='sudo xbps-install -Su'
 alias _r='sudo xbps-remove'
 
 #query local and remote packages
-alias _l='xbps-query -l'
+alias _l='xbps-query -l | grep '
 alias _q='xbps-query -Rs'
 
 #Perform a full system upgrade
@@ -60,12 +63,15 @@ alias _m='xbps-query -m | xargs -n1 xbps-uhelper getpkgname > ~/.config/INSTALLE
 
 #Update the mlocate database
 alias udb='sudo updatedb'
+alias h='history'
+alias hh='history | grep '
+alias l='locate'
 
 #source .bashrc
 alias src='. ~/.bashrc'
 
 #Open postinstall.sh in vim
-alias pi='cd ~/.config/scripts && vim postinstall.sh'
+alias £pi='cd ~/.config/scripts && vim postinstall.sh'
 
 #Run postinstall.sh
 alias +pi='cd $HOME/.config/scripts && ./postinstall.sh'
@@ -79,39 +85,65 @@ alias s='vim $HOME/.config/scripts/'
 #open the pdfviewer
 alias pdf='pdfviewer'
 
-#openbox config
-#alias o='obconf-qt'
-#alias k='kickshaw'
-
 #edit this file
-alias al='vim ~/.config/scripts/aliases'
+alias £al='vim ~/.config/scripts/aliases'
 
 #edit the 'env' file
-alias en='vim ~/.config/scripts/env'
+alias £en='vim ~/.config/scripts/env'
 
-#edit starhip config
-alias star='vim ~/.config/starship.toml'
+#edit starship config
+alias £ss='vim ~/.config/starship.toml'
+
+#edit the xinitrc file
+alias £xi='vim $HOME/.xinitrc'
 
 #Start hugo test server in draft mode for $CURRENT_BLOG
 alias +hgd='cd ~/blogResources/$CURRENT_BLOG && hugo server -D'
 alias +hg='cd ~/blogResources/$CURRENT_BLOG && hugo server'
 #alias +np= 'hugo new posts/'
 
-#Get Application properties
-#alias getprop='obxprop | grep "^_OB_APP"'
-
-#edit the dmm config
+#maintain the dwm config
+alias %dwm='cd $HOME/.dwm/dwm'
 alias £dwm='vim $HOME/.dwm/dwm/config.def.h'
-alias £st='vim $HOME/.dwm/st/config.def.h'
+alias +dwm='cd $HOME/.dwm/dwm && rm -f config.h && sudo make clean install'
 
-#sudo make clean install in dwm directory
-alias £+dwm='cd $HOME/.dwm/dwm && rm -f config.h && sudo make clean install'
-alias £+st='cd $HOME/.dwm/st && rm -f config.h && sudo make clean install'
+#maintain the st config
+alias %st='cd $HOME/.dwm/st'
+alias £st='vim $HOME/.dwm/st/config.def.h'
+alias +st='cd $HOME/.dwm/st && rm -f config.h && sudo make clean install'
+
+#maintain the dmenu config
+alias %dm='cd $HOME/.dwm/dmenu'
+alias £dm='vim $HOME/.dwm/dmenu/config.def.h'
+alias +dm='cd $HOME/.dwm/dmenu && rm -f config.h && sudo make clean install'
+
+#maintain the surf config
+alias %sf='cd $HOME/.dwm/surf'
+alias £sf='vim $HOME/.dwm/surf/config.def.h'
+alias +sf='cd $HOME/.dwm/surf && rm -f config.h && sudo make clean install'
+
+#maintain the dwmstatus config
+alias %dst='cd $HOME/.dwm/dwmstatus'
+alias £dst='vim $HOME/.dwm/dwmstatus/config.def.h'
+alias +dst='cd $HOME/.dwm/dwmstatus && rm -f config.h && sudo make clean install'
+
+#maintain the tabbed config
+alias %tbd='cd $HOME/.dwm/tabbed'
+alias £tbd='vim $HOME/.dwm/tabbed/config.def.h'
+alias +tbd='cd $HOME/.dwm/tabbed && rm -f config.h && sudo make clean install'
 
 #speedtest
 alias spd='speedtest-cli'
 
 #vim shortcuts
 alias v='vim'
-alias vrc='vim $HOME/.vimrc'
-alias vpl='vim $HOME/.vim/plugins.vim'
+alias £vr='vim $HOME/.vimrc'
+alias £vp='vim $HOME/.vim/plugins.vim'
+alias £pc='vim $HOME/.vim/plugin-config.vim'
+alias +vc='cd $HOME/sCrAtCh/codeProjects/ && vim'
+
+#gdb shortcuts
+alias +gdb='cd $HOME/sCrAtCh/codeProjects && gdb'
+
+#OpenFrameworks
+alias +nof='$HOME/.config/scripts/newOFProject.sh && cd $HOME/sCrAtCh/codeProjects'

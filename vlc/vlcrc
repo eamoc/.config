@@ -2724,7 +2724,7 @@ alsa-audio-device=default:CARD=USB
 #alsa-audio-channels=6
 
 # Software gain (float)
-alsa-gain=0.512000
+alsa-gain=0.274625
 
 [afile] # File audio output
 

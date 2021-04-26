@@ -7,6 +7,7 @@ export GIT_AUTHOR_EMAIL='eamonncostello@gmail.com'
 export LC_ALL=en_IE.UTF-8
 export CURRENT_BLOG=$HOME/blogs/myBlog/
 export VIM_PLUGINS=$HOME/.vim/plugins.vim
+
 #Path Additions
 #Set PATH so it includes user's private bin if it exists
 if [ -d ~/bin ]; then
